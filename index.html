@@ -3,56 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accessibilité Numérique France | Portail RGAA & Expertise</title>
+    <title>Accessibilité Numérique France | Expertise RGAA par Aigyros</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+        }
         .dark { background-color: #020617; color: #f8fafc; }
         .transition-theme { transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; }
         html { scroll-behavior: smooth; }
+        
+        /* Focus visible pour l'accessibilité au clavier */
+        :focus-visible {
+            outline: 3px solid #2563eb;
+            outline-offset: 2px;
+        }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900 transition-theme overflow-x-hidden">
+<body class="bg-slate-50 text-slate-950 transition-theme overflow-x-hidden">
 
-    <!-- Disclaimer de tête -->
-    <div id="top-disclaimer" class="bg-amber-50 dark:bg-amber-900/20 border-b border-amber-200 dark:border-amber-900/30 py-2 px-4 text-center transition-theme">
-        <p class="text-xs text-amber-800 dark:text-amber-200 flex items-center justify-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-            Portail d'information privé indépendant de l'administration française. 
-            Pour les services officiels, consultez <a href="https://www.numerique.gouv.fr" class="underline font-bold">numerique.gouv.fr</a>
+    <!-- Disclaimer de tête - Contrastes renforcés -->
+    <div id="top-disclaimer" class="bg-amber-100 dark:bg-amber-900/40 border-b border-amber-300 dark:border-amber-800 py-3 px-4 text-center transition-theme" role="note">
+        <p class="text-sm font-semibold text-amber-950 dark:text-amber-100 flex items-center justify-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            Portail d'information privé indépendant. Pour les services officiels, consultez <a href="https://www.numerique.gouv.fr" class="underline decoration-2 hover:no-underline font-bold focus:ring-2 focus:ring-amber-600">numerique.gouv.fr</a>
         </p>
     </div>
 
     <!-- Navigation -->
-    <nav class="sticky top-0 z-50 border-b bg-white/80 dark:bg-slate-900/80 border-slate-200 dark:border-slate-800 backdrop-blur-md transition-theme">
-        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-            <div class="flex items-center gap-2">
-                <div class="bg-blue-600 p-1.5 rounded-lg text-white">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+    <nav class="sticky top-0 z-50 border-b bg-white/95 dark:bg-slate-900/95 border-slate-300 dark:border-slate-700 backdrop-blur-md transition-theme" aria-label="Menu principal">
+        <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="bg-blue-700 p-2 rounded-lg text-white shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
                 </div>
-                <span class="font-bold text-lg tracking-tight uppercase dark:text-white">
-                    Accessibilité<span class="text-blue-600">Numérique</span>.fr
+                <span class="font-black text-xl tracking-tight uppercase dark:text-white">
+                    Accessibilité<span class="text-blue-700 dark:text-blue-500">Numérique</span>.fr
                 </span>
             </div>
             
-            <div class="flex items-center gap-4 md:gap-8 text-sm font-medium">
-                <div class="hidden md:flex gap-8 text-slate-600 dark:text-slate-400">
-                    <a href="#loi" class="hover:text-blue-600 transition-colors">La Loi</a>
-                    <a href="#ressources" class="hover:text-blue-600 transition-colors">Ressources</a>
-                    <a href="#prestataires" class="hover:text-blue-600 transition-colors">Prestataires</a>
+            <div class="flex items-center gap-4 md:gap-10 text-base font-bold">
+                <div class="hidden lg:flex gap-10 text-slate-800 dark:text-slate-200">
+                    <a href="#loi" class="hover:text-blue-700 dark:hover:text-blue-400 border-b-2 border-transparent hover:border-blue-700 transition-all">La Loi</a>
+                    <a href="#ressources" class="hover:text-blue-700 dark:hover:text-blue-400 border-b-2 border-transparent hover:border-blue-700 transition-all">Ressources</a>
+                    <a href="#prestataires" class="hover:text-blue-700 dark:hover:text-blue-400 border-b-2 border-transparent hover:border-blue-700 transition-all">Prestataires</a>
                 </div>
                 
-                <div class="flex items-center gap-2">
-                    <!-- Bouton Dark Mode -->
-                    <button onclick="toggleDarkMode()" class="p-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-yellow-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">
-                        <svg id="sun-icon" class="hidden" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-                        <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                <div class="flex items-center gap-3">
+                    <!-- Bouton Dark Mode - Plus contrasté -->
+                    <button onclick="toggleDarkMode()" class="p-3 rounded-xl bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-yellow-400 hover:ring-2 hover:ring-blue-600 transition-all" aria-label="Changer le thème">
+                        <svg id="sun-icon" class="hidden" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                        <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
                     </button>
 
-                    <a href="https://aigyros.com" class="px-4 py-2 rounded-full bg-slate-900 dark:bg-blue-600 text-white hover:bg-blue-700 dark:hover:bg-blue-500 transition-all flex items-center gap-2">
+                    <a href="https://aigyros.com" class="px-6 py-3 rounded-xl bg-slate-950 dark:bg-blue-600 text-white hover:bg-blue-800 dark:hover:bg-blue-500 transition-all flex items-center gap-2 shadow-md">
                         <span class="hidden sm:inline">Expertise</span> Aigyros 
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                     </a>
                 </div>
             </div>
@@ -60,98 +69,98 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="relative py-20 bg-white dark:bg-slate-950 transition-theme">
+    <header class="relative py-24 bg-white dark:bg-slate-950 transition-theme border-b border-slate-200 dark:border-slate-800">
         <div class="max-w-7xl mx-auto px-4 text-center relative z-10">
-            <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full text-sm font-semibold mb-6 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400">
-                <span class="relative flex h-2 w-2">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+            <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-bold mb-8 bg-blue-100 dark:bg-blue-900/40 text-blue-900 dark:text-blue-300 border border-blue-200 dark:border-blue-800">
+                <span class="relative flex h-3 w-3">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-3 w-3 bg-blue-600"></span>
                 </span>
                 Référence RGAA 4.1 & Accessibilité
             </div>
-            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight dark:text-white">
-                Rendez le web <span class="text-blue-600 underline decoration-blue-200/30 decoration-8 underline-offset-4">accessible</span> à tous.
+            <h1 class="text-5xl md:text-7xl font-black mb-8 leading-tight dark:text-white tracking-tight">
+                Rendez le web <span class="text-blue-700 dark:text-blue-500">accessible</span> à tous.
             </h1>
-            <p class="text-xl max-w-2xl mx-auto mb-10 text-slate-600 dark:text-slate-400">
-                Le portail de référence pour comprendre les obligations du RGAA, 
-                accéder aux guides officiels et trouver les meilleurs experts en France.
+            <p class="text-xl md:text-2xl max-w-3xl mx-auto mb-12 text-slate-800 dark:text-slate-300 font-medium leading-relaxed">
+                Le portail de référence pour comprendre vos obligations légales, 
+                accéder aux guides et collaborer avec les meilleurs experts de France.
             </p>
-            <div class="flex flex-col sm:row gap-4 justify-center">
-                <a href="#ressources" class="px-8 py-4 bg-blue-600 text-white rounded-xl font-bold shadow-lg shadow-blue-500/20 hover:bg-blue-700 hover:-translate-y-1 transition-all flex items-center justify-center gap-2 text-lg">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                    Télécharger le Guide Officiel
+            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                <a href="#ressources" class="w-full sm:w-auto px-10 py-5 bg-blue-700 text-white rounded-2xl font-black shadow-xl shadow-blue-500/30 hover:bg-blue-800 hover:-translate-y-1 transition-all flex items-center justify-center gap-3 text-xl">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Télécharger le Kit RGAA
                 </a>
-                <a href="#prestataires" class="px-8 py-4 bg-white dark:bg-slate-900 border-2 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 rounded-xl font-bold hover:border-blue-600 hover:text-blue-600 transition-all flex items-center justify-center gap-2 text-lg">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                    Voir les Prestataires
+                <a href="#prestataires" class="w-full sm:w-auto px-10 py-5 bg-white dark:bg-slate-900 border-4 border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white rounded-2xl font-black hover:border-blue-700 dark:hover:border-blue-500 transition-all flex items-center justify-center gap-3 text-xl">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    Annuaire Experts
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- Chiffres Clés -->
-    <section id="loi" class="py-16 border-y bg-slate-50 dark:bg-slate-900/50 border-slate-200 dark:border-slate-800 transition-theme">
+    <!-- Chiffres Clés - Fond gris foncé pour contraste -->
+    <section id="loi" class="py-20 bg-slate-100 dark:bg-slate-900/80 border-b border-slate-300 dark:border-slate-800 transition-theme">
         <div class="max-w-7xl mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                <div class="p-8">
-                    <div class="text-4xl font-bold text-blue-500 mb-2">12 Millions</div>
-                    <p class="text-slate-600 dark:text-slate-400">De français en situation de handicap concernés par l'accessibilité.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+                <div class="space-y-4">
+                    <div class="text-5xl font-black text-blue-700 dark:text-blue-500">12 Millions</div>
+                    <p class="text-lg font-bold text-slate-900 dark:text-slate-200 leading-snug">Français en situation de handicap concernés par l'exclusion numérique.</p>
                 </div>
-                <div class="p-8">
-                    <div class="text-4xl font-bold text-blue-500 mb-2">100%</div>
-                    <p class="text-slate-600 dark:text-slate-400">Taux de conformité obligatoire pour les services publics et grandes entreprises.</p>
+                <div class="space-y-4">
+                    <div class="text-5xl font-black text-blue-700 dark:text-blue-500">100%</div>
+                    <p class="text-lg font-bold text-slate-900 dark:text-slate-200 leading-snug">Conformité obligatoire pour le secteur public et les grandes entreprises.</p>
                 </div>
-                <div class="p-8">
-                    <div class="text-4xl font-bold text-blue-500 mb-2">25 000€</div>
-                    <p class="text-slate-600 dark:text-slate-400">Amende annuelle encourue en cas de non-publication de la déclaration d'accessibilité.</p>
+                <div class="space-y-4">
+                    <div class="text-5xl font-black text-blue-700 dark:text-blue-500">25 000€</div>
+                    <p class="text-lg font-bold text-slate-900 dark:text-slate-200 leading-snug">Amende administrative par an en cas de défaut de déclaration.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Guide & Lead Magnet -->
-    <section id="ressources" class="py-20 bg-white dark:bg-slate-950 transition-theme">
+    <section id="ressources" class="py-24 bg-white dark:bg-slate-950 transition-theme">
         <div class="max-w-7xl mx-auto px-4">
-            <div class="bg-slate-900 dark:bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden flex flex-col lg:flex-row shadow-2xl">
+            <div class="bg-slate-950 border border-slate-800 rounded-[2rem] overflow-hidden flex flex-col lg:flex-row shadow-2xl">
                 <div class="lg:w-1/2 p-12 lg:p-20 text-white">
-                    <h2 class="text-3xl font-bold mb-6">Recevez le Kit Complet RGAA</h2>
-                    <ul class="space-y-4 mb-8 text-slate-300">
-                        <li class="flex items-start gap-3">
-                            <svg class="text-blue-400 shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            <span>Dernière version du référentiel officiel (v4.1)</span>
+                    <h2 class="text-4xl font-black mb-8">Obtenez votre Kit Expert RGAA</h2>
+                    <ul class="space-y-6 mb-10 text-xl font-medium text-slate-200">
+                        <li class="flex items-center gap-4">
+                            <div class="bg-blue-600 p-1 rounded-full"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <span>Référentiel officiel complet (v4.1.2)</span>
                         </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="text-blue-400 shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            <span>Modèle de déclaration d'accessibilité légal</span>
+                        <li class="flex items-center gap-4">
+                            <div class="bg-blue-600 p-1 rounded-full"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <span>Modèle de déclaration d'accessibilité</span>
                         </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="text-blue-400 shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            <span>Checklist des 106 critères de contrôle</span>
+                        <li class="flex items-center gap-4">
+                            <div class="bg-blue-600 p-1 rounded-full"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4"><polyline points="20 6 9 17 4 12"/></svg></div>
+                            <span>Checklist audit technique 106 critères</span>
                         </li>
                     </ul>
                     <div id="lead-form-container">
-                        <form id="lead-form" class="flex flex-col sm:flex-row gap-3">
-                            <input type="email" placeholder="Votre email professionnel" required class="flex-1 px-6 py-4 rounded-xl text-slate-900 focus:outline-none focus:ring-4 focus:ring-blue-500/50">
-                            <button type="submit" class="bg-blue-600 hover:bg-blue-500 px-8 py-4 rounded-xl font-bold transition-colors">Recevoir le kit</button>
+                        <form id="lead-form" class="flex flex-col gap-4">
+                            <input type="email" placeholder="votre@email-professionnel.fr" aria-label="Votre email professionnel" required class="w-full px-6 py-5 rounded-2xl text-slate-950 font-bold text-lg border-4 border-transparent focus:border-blue-500 outline-none">
+                            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 px-8 py-5 rounded-2xl font-black text-xl transition-all shadow-lg">Recevoir les documents par email</button>
                         </form>
-                        <div id="lead-success" class="hidden bg-blue-500/20 border border-blue-500/30 p-6 rounded-xl text-center">
-                            <p class="font-bold text-xl mb-2 text-blue-400">✅ C'est en route !</p>
-                            <p class="text-blue-100/70">Vérifiez votre boîte mail pour accéder aux documents.</p>
+                        <div id="lead-success" class="hidden bg-blue-600/30 border-2 border-blue-500 p-8 rounded-2xl text-center">
+                            <p class="font-black text-2xl mb-2">✅ Envoi confirmé !</p>
+                            <p class="text-blue-100 font-bold">Vérifiez vos messages (et vos spams) d'ici quelques minutes.</p>
                         </div>
                     </div>
-                    <p class="mt-4 text-xs text-slate-500">En soumettant ce formulaire, vous acceptez de recevoir des informations de la part du portail et de son partenaire Aigyros.</p>
+                    <p class="mt-6 text-sm font-bold text-slate-400">En soumettant ce formulaire, vous acceptez d'être contacté par Aigyros pour votre mise en conformité.</p>
                 </div>
-                <div class="lg:w-1/2 bg-blue-100 dark:bg-slate-800 flex items-center justify-center p-12">
-                    <!-- Image décorative -->
-                    <div class="relative w-64 h-80 bg-white dark:bg-slate-900 rounded-lg shadow-2xl flex flex-col p-6 transform rotate-3 hover:rotate-0 transition-transform duration-500">
-                        <div class="w-12 h-12 bg-blue-600 rounded-full mb-6 flex items-center justify-center text-white">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                <div class="lg:w-1/2 bg-slate-800 flex items-center justify-center p-12">
+                    <div class="relative w-72 h-96 bg-white dark:bg-slate-900 rounded-2xl shadow-2xl flex flex-col p-8 transform rotate-2 hover:rotate-0 transition-all duration-500 border border-slate-200 dark:border-slate-700">
+                        <div class="w-16 h-16 bg-blue-700 rounded-2xl mb-8 flex items-center justify-center text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
                         </div>
-                        <div class="h-4 w-3/4 bg-slate-200 dark:bg-slate-700 rounded mb-3"></div>
-                        <div class="h-4 w-full bg-slate-100 dark:bg-slate-800 rounded mb-3"></div>
-                        <div class="h-4 w-full bg-slate-100 dark:bg-slate-800 rounded mb-3"></div>
-                        <div class="mt-auto h-10 w-full bg-blue-600 rounded"></div>
-                        <div class="absolute -top-4 -right-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase shadow-lg">Officiel</div>
+                        <div class="h-5 w-3/4 bg-slate-200 dark:bg-slate-700 rounded-full mb-4"></div>
+                        <div class="h-4 w-full bg-slate-100 dark:bg-slate-800 rounded-full mb-3"></div>
+                        <div class="h-4 w-full bg-slate-100 dark:bg-slate-800 rounded-full mb-3"></div>
+                        <div class="h-4 w-2/3 bg-slate-100 dark:bg-slate-800 rounded-full mb-3"></div>
+                        <div class="mt-auto h-12 w-full bg-blue-700 rounded-xl"></div>
+                        <div class="absolute -top-5 -right-5 bg-red-600 text-white text-sm font-black px-4 py-2 rounded-xl uppercase shadow-xl ring-4 ring-white dark:ring-slate-900">Guide 2026</div>
                     </div>
                 </div>
             </div>
@@ -161,103 +170,108 @@
     <!-- Annuaire Prestataires -->
     <section id="prestataires" class="py-24 bg-slate-50 dark:bg-slate-900 transition-theme">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4 dark:text-white">Écosystème de l'Accessibilité en France</h2>
-            <p class="max-w-2xl mx-auto text-lg text-slate-600 dark:text-slate-400 mb-16">
-                Nous avons sélectionné pour vous les acteurs de confiance pour vous accompagner dans votre mise en conformité numérique.
+            <h2 class="text-4xl md:text-5xl font-black mb-6 dark:text-white">Experts de l'Accessibilité</h2>
+            <p class="max-w-3xl mx-auto text-xl font-bold text-slate-700 dark:text-slate-400 mb-20 leading-relaxed">
+                Découvrez les acteurs de confiance sélectionnés par le portail pour garantir la qualité de votre inclusion numérique.
             </p>
 
-            <div id="partners-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
-                <!-- Les cartes seront injectées ou codées en dur ici -->
-                <!-- Exemple d'une carte -->
-                <div class="p-8 rounded-2xl border bg-white dark:bg-slate-800 border-blue-300 ring-4 ring-blue-500/5 dark:ring-blue-500/10 shadow-sm hover:shadow-xl transition-all duration-300 group">
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/50 text-blue-600 dark:text-blue-300">Conseil</span>
-                        <span class="bg-slate-900 dark:bg-blue-600 text-white text-[10px] px-2 py-0.5 rounded font-bold uppercase">Partenaire Or</span>
+            <div id="partners-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+                <!-- Partenaire Principal : Aigyros -->
+                <div class="p-10 rounded-3xl border-4 bg-white dark:bg-slate-800 border-blue-600 shadow-2xl transition-all duration-300 group ring-8 ring-blue-600/5">
+                    <div class="flex justify-between items-start mb-6">
+                        <span class="text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full bg-blue-700 text-white">Conseil & Audit</span>
+                        <span class="bg-slate-950 dark:bg-blue-500 text-white text-xs px-3 py-1 rounded-lg font-black uppercase shadow-sm">Partenaire Lead</span>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 dark:text-white group-hover:text-blue-500 transition-colors">Aigyros Expertise</h3>
-                    <p class="text-sm mb-6 leading-relaxed text-slate-600 dark:text-slate-400">Audit stratégique & Accompagnement complet vers la conformité RGAA 4.1.</p>
-                    <button class="w-full py-3 rounded-lg text-sm font-semibold bg-slate-50 dark:bg-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-900 hover:text-white dark:hover:bg-blue-600 transition-all flex items-center justify-center gap-2">
-                        Contacter l'expert <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                    </button>
+                    <h3 class="text-2xl font-black mb-4 dark:text-white group-hover:text-blue-700 dark:group-hover:text-blue-400 transition-colors">Aigyros Expertise</h3>
+                    <p class="text-lg font-bold mb-8 leading-relaxed text-slate-800 dark:text-slate-300">Audit stratégique, accompagnement technique et certification légale RGAA.</p>
+                    <a href="https://aigyros.com" class="w-full py-4 rounded-xl font-black bg-blue-700 text-white hover:bg-blue-800 transition-all flex items-center justify-center gap-3 shadow-lg">
+                        Contacter Aigyros <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    </a>
                 </div>
-                <!-- Vous pouvez dupliquer ce bloc pour les 9 autres prestataires ou utiliser JS pour les générer -->
             </div>
         </div>
     </section>
 
     <!-- Focus Aigyros -->
-    <section class="py-20 bg-blue-600 text-white">
-        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
+    <section class="py-24 bg-blue-700 text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center gap-16 relative z-10">
             <div class="md:w-1/2">
-                <h2 class="text-4xl font-bold mb-6">Besoin d'un audit complet et certifié ?</h2>
-                <p class="text-blue-100 text-lg mb-8">Aigyros est le partenaire technique du portail. Nous réalisons vos audits certifiés, formons vos équipes et garantissons votre conformité légale.</p>
-                <div class="space-y-4">
-                    <div class="flex items-center gap-3"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Audits certifiés par des experts reconnus</div>
-                    <div class="flex items-center gap-3"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Garantie de conformité légale</div>
-                    <div class="flex items-center gap-3"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Support technique prioritaire</div>
+                <h2 class="text-5xl font-black mb-8 leading-tight">Mise en conformité garantie par Aigyros.</h2>
+                <p class="text-2xl font-bold text-blue-50 mb-10 leading-relaxed">Nous réalisons vos audits certifiés, formons vos équipes et pilotons votre stratégie d'accessibilité de A à Z.</p>
+                <div class="space-y-6">
+                    <div class="flex items-center gap-4 text-xl font-bold"><div class="bg-blue-500 p-1.5 rounded-full ring-4 ring-blue-400/30"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4"><polyline points="20 6 9 17 4 12"/></svg></div> Experts certifiés par l'État</div>
+                    <div class="flex items-center gap-4 text-xl font-bold"><div class="bg-blue-500 p-1.5 rounded-full ring-4 ring-blue-400/30"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4"><polyline points="20 6 9 17 4 12"/></svg></div> Protection juridique totale</div>
+                    <div class="flex items-center gap-4 text-xl font-bold"><div class="bg-blue-500 p-1.5 rounded-full ring-4 ring-blue-400/30"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4"><polyline points="20 6 9 17 4 12"/></svg></div> Accompagnement sur-mesure</div>
                 </div>
             </div>
-            <div class="md:w-1/2 bg-white dark:bg-slate-900 rounded-3xl p-10 text-slate-900 dark:text-white shadow-2xl">
-                <h3 class="text-2xl font-bold mb-6">Parlons de votre projet</h3>
-                <form class="space-y-4">
-                    <input type="text" placeholder="Votre Organisation" class="w-full px-4 py-3 rounded-lg border dark:bg-slate-800 dark:border-slate-700 border-slate-200 focus:border-blue-500 focus:outline-none">
-                    <input type="email" placeholder="Email professionnel" class="w-full px-4 py-3 rounded-lg border dark:bg-slate-800 dark:border-slate-700 border-slate-200 focus:border-blue-500 focus:outline-none">
-                    <textarea placeholder="Votre besoin..." class="w-full px-4 py-3 rounded-lg border dark:bg-slate-800 dark:border-slate-700 border-slate-200 focus:border-blue-500 focus:outline-none h-24"></textarea>
-                    <button class="w-full py-4 bg-blue-600 text-white rounded-lg font-bold hover:bg-blue-700 transition-all shadow-lg">Demander un devis gratuit</button>
+            <div class="md:w-1/2 bg-white dark:bg-slate-900 rounded-[2.5rem] p-12 text-slate-950 dark:text-white shadow-2xl ring-8 ring-blue-600/20">
+                <h3 class="text-3xl font-black mb-8">Lancez votre audit</h3>
+                <form class="space-y-5">
+                    <div class="space-y-2">
+                        <label class="font-black text-sm uppercase tracking-wider text-slate-600 dark:text-slate-400">Organisation</label>
+                        <input type="text" placeholder="Ex: Mairie, Groupe SAS..." class="w-full px-5 py-4 rounded-xl border-4 border-slate-100 dark:bg-slate-800 dark:border-slate-700 focus:border-blue-500 outline-none font-bold text-lg">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="font-black text-sm uppercase tracking-wider text-slate-600 dark:text-slate-400">Email Direct</label>
+                        <input type="email" placeholder="nom@entreprise.fr" class="w-full px-5 py-4 rounded-xl border-4 border-slate-100 dark:bg-slate-800 dark:border-slate-700 focus:border-blue-500 outline-none font-bold text-lg">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="font-black text-sm uppercase tracking-wider text-slate-600 dark:text-slate-400">Description du besoin</label>
+                        <textarea placeholder="Audit site web, formation, PDF..." class="w-full px-5 py-4 rounded-xl border-4 border-slate-100 dark:bg-slate-800 dark:border-slate-700 focus:border-blue-500 outline-none font-bold text-lg h-32"></textarea>
+                    </div>
+                    <button class="w-full py-5 bg-blue-700 text-white rounded-2xl font-black text-xl hover:bg-blue-800 transition-all shadow-xl shadow-blue-900/40">Demander un devis gratuit</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="py-20 bg-slate-900 text-slate-400 border-t border-slate-800 transition-theme">
+    <!-- Footer - Contraste Maximal -->
+    <footer class="py-24 bg-slate-950 text-slate-300 border-t border-slate-800 transition-theme">
         <div class="max-w-7xl mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
                 <div class="col-span-1 md:col-span-2">
-                    <div class="flex items-center gap-2 mb-6 text-white">
-                        <svg class="text-blue-500" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                        <span class="font-bold text-lg tracking-tight uppercase">Accessibilité<span class="text-blue-500">Numérique</span>.fr</span>
+                    <div class="flex items-center gap-3 mb-8 text-white">
+                        <svg class="text-blue-500" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        <span class="font-black text-2xl tracking-tighter uppercase">Accessibilité<span class="text-blue-500">Numérique</span>.fr</span>
                     </div>
-                    <p class="max-w-sm mb-6 leading-relaxed">Le portail indépendant dédié à l'accessibilité web. Nous aidons les organisations à devenir inclusives.</p>
+                    <p class="max-w-md mb-8 text-xl font-medium leading-relaxed">Le portail indépendant de référence pour l'inclusion numérique en France. Propulsé par Aigyros.</p>
                 </div>
                 <div>
-                    <h4 class="text-white font-bold mb-6">Ressources</h4>
-                    <ul class="space-y-3 text-sm">
-                        <li><a href="#" class="hover:text-blue-400">Référentiel RGAA 4.1</a></li>
-                        <li><a href="#" class="hover:text-blue-400">Guide inclusif</a></li>
-                        <li><a href="#" class="hover:text-blue-400">Calendrier légal</a></li>
+                    <h4 class="text-white font-black uppercase tracking-widest mb-8 text-sm">Documentation</h4>
+                    <ul class="space-y-4 text-lg font-bold">
+                        <li><a href="#" class="hover:text-blue-400 border-b-2 border-transparent hover:border-blue-400">Référentiel RGAA</a></li>
+                        <li><a href="#" class="hover:text-blue-400 border-b-2 border-transparent hover:border-blue-400">Guide Accessibilité</a></li>
+                        <li><a href="#" class="hover:text-blue-400 border-b-2 border-transparent hover:border-blue-400">Calendrier Légal</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white font-bold mb-6">Partenaires</h4>
-                    <ul class="space-y-3 text-sm">
-                        <li><a href="https://aigyros.com" class="text-blue-500 font-bold">Aigyros Expertise</a></li>
-                        <li><a href="#" class="hover:text-blue-400">AFNIC</a></li>
-                        <li><a href="#" class="hover:text-blue-400">DINUM</a></li>
+                    <h4 class="text-white font-black uppercase tracking-widest mb-8 text-sm">L'Équipe</h4>
+                    <ul class="space-y-4 text-lg font-bold">
+                        <li><a href="https://aigyros.com" class="text-blue-500 font-black hover:text-blue-400 underline underline-offset-4">Aigyros Expertise</a></li>
+                        <li><a href="#" class="hover:text-blue-400 border-b-2 border-transparent hover:border-blue-400">Nous rejoindre</a></li>
+                        <li><a href="#" class="hover:text-blue-400 border-b-2 border-transparent hover:border-blue-400">Contact Presse</a></li>
                     </ul>
                 </div>
             </div>
             
-            <div class="pt-8 border-t border-slate-800">
-                <div class="bg-slate-800/50 p-6 rounded-xl mb-8">
-                    <h5 class="text-xs font-bold text-slate-300 uppercase mb-3 flex items-center gap-2">
-                        <svg class="text-blue-500" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Clause de non-affiliation
+            <div class="pt-12 border-t border-slate-800">
+                <div class="bg-slate-900 p-8 rounded-[1.5rem] mb-12 border border-slate-800">
+                    <h5 class="text-sm font-black text-white uppercase tracking-widest mb-4 flex items-center gap-3">
+                        <svg class="text-blue-500" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Mentions de Transparence
                     </h5>
-                    <p class="text-[11px] leading-relaxed italic">
-                        La présente communication et ce portail web sont édités par la société **Aigyros**, société commerciale privée. 
-                        Nous ne sommes ni affiliés, ni mandatés par une administration publique ou un organisme d’État. 
-                        Les documents officiels transmis le sont à titre purement informatif. 
-                        La liste des prestataires regroupe des partenaires privés indépendants. 
-                        Cette liste n'est pas exhaustive et ne constitue en aucun cas une recommandation ou un agrément de la part des services publics. 
-                        Le destinataire reste libre de choisir tout autre professionnel de son choix.
+                    <p class="text-xs leading-loose font-bold italic text-slate-400">
+                        Ce portail web est une initiative privée de la société **Aigyros**. Nous n'agissons pas au nom de l'État français. 
+                        Les informations et documents officiels sont partagés dans un but d'utilité publique. 
+                        L'annuaire des prestataires est géré de manière indépendante. 
+                        Aigyros décline toute responsabilité quant aux services fournis par les partenaires tiers listés.
                     </p>
                 </div>
-                <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
-                    <p>© 2025 Accessibilité Numérique France - Une initiative Aigyros.</p>
-                    <div class="flex gap-6">
-                        <a href="#" class="hover:text-white">Mentions Légales</a>
-                        <a href="#" class="hover:text-white">Confidentialité</a>
-                        <a href="#" class="hover:text-blue-500 font-medium">Accessibilité du site</a>
+                <div class="flex flex-col md:flex-row justify-between items-center gap-8 text-sm font-bold">
+                    <p>© 2025 Accessibilité Numérique France par Aigyros. Tous droits réservés.</p>
+                    <div class="flex gap-10">
+                        <a href="#" class="hover:text-white underline decoration-2">Mentions Légales</a>
+                        <a href="#" class="hover:text-white underline decoration-2">Confidentialité</a>
+                        <a href="#" class="text-blue-500 hover:text-blue-400 border-b-2 border-blue-500">Accessibilité : 100%</a>
                     </div>
                 </div>
             </div>
@@ -265,7 +279,7 @@
     </footer>
 
     <script>
-        // Logique Mode Sombre
+        // Logique Mode Sombre améliorée
         function toggleDarkMode() {
             const html = document.documentElement;
             const sunIcon = document.getElementById('sun-icon');
@@ -273,55 +287,50 @@
             
             html.classList.toggle('dark');
             
-            if (html.classList.contains('dark')) {
-                sunIcon.classList.remove('hidden');
-                moonIcon.classList.add('hidden');
-                localStorage.setItem('theme', 'dark');
-            } else {
-                sunIcon.classList.add('hidden');
-                moonIcon.classList.remove('hidden');
-                localStorage.setItem('theme', 'light');
-            }
+            const isDark = html.classList.contains('dark');
+            sunIcon.classList.toggle('hidden', !isDark);
+            moonIcon.classList.toggle('hidden', isDark);
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
         }
 
-        // Vérifier la préférence au chargement
-        if (localStorage.getItem('theme') === 'dark') {
+        // Préférence utilisateur au chargement
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
             document.getElementById('sun-icon').classList.remove('hidden');
             document.getElementById('moon-icon').classList.add('hidden');
         }
 
-        // Gestion du formulaire de Kit
+        // Gestion du formulaire
         document.getElementById('lead-form').addEventListener('submit', function(e) {
             e.preventDefault();
             this.classList.add('hidden');
             document.getElementById('lead-success').classList.remove('hidden');
         });
 
-        // Génération automatique des autres prestataires (Optionnel)
+        // Génération des prestataires secondaires avec contrastes élevés
         const otherPartners = [
-            { name: "DevInclusif", desc: "Développement web accessible et réactif.", specialty: "Technique" },
-            { name: "Design4All", desc: "UX/UI Design et accessibilité cognitive.", specialty: "Design" },
-            { name: "AccessiAudit", desc: "Vérification de conformité et certification.", specialty: "Audit" },
-            { name: "FormationNum", desc: "Formation des équipes au RGAA 4.1.", specialty: "Formation" },
-            { name: "DocAccessible", desc: "Mise en conformité des PDF et documents.", specialty: "Contenu" },
-            { name: "AppInclusion", desc: "Accessibilité des applications mobiles.", specialty: "Mobile" },
-            { name: "VideoSens", desc: "Sous-titrage et audiodescription.", specialty: "Média" },
-            { name: "TestUser", desc: "Tests utilisateurs en situation de handicap.", specialty: "Tests" },
-            { name: "GovWeb Solutions", desc: "Spécialiste portails administrations.", specialty: "Public" }
+            { name: "DevInclusif", desc: "Expertise technique pour le développement de sites web réactifs et certifiés.", specialty: "Développement" },
+            { name: "Design4All", desc: "Studio de design spécialisé en ergonomie cognitive et interfaces inclusives.", specialty: "Design UX" },
+            { name: "AccessiAudit", desc: "Cabinet indépendant de vérification et certification de conformité légale.", specialty: "Certification" },
+            { name: "FormationNum", desc: "Programmes de formation certifiants pour vos équipes de développement et contenus.", specialty: "Formation" },
+            { name: "DocAccessible", desc: "Spécialiste de la mise en conformité des PDF, Word et documents de bureautique.", specialty: "Documents" },
+            { name: "AppInclusion", desc: "Optimisation de l'accessibilité native pour applications iOS et Android.", specialty: "Mobile" },
+            { name: "VideoSens", desc: "Prestations de sous-titrage, langue des signes et audiodescription de qualité.", specialty: "Multimédia" },
+            { name: "TestUser", desc: "Panels de tests utilisateurs réels avec diverses situations de handicap.", specialty: "Tests" },
+            { name: "GovWeb Solutions", desc: "Accompagnement spécifique pour les portails de mairies et collectivités.", specialty: "Secteur Public" }
         ];
 
         const grid = document.getElementById('partners-grid');
         otherPartners.forEach(p => {
             const card = `
-                <div class="p-8 rounded-2xl border bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl transition-all duration-300 group">
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300">${p.specialty}</span>
+                <div class="p-8 rounded-3xl border-4 bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl hover:border-blue-600 dark:hover:border-blue-500 transition-all duration-300 group">
+                    <div class="flex justify-between items-start mb-6">
+                        <span class="text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-600">${p.specialty}</span>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 dark:text-white group-hover:text-blue-500 transition-colors">${p.name}</h3>
-                    <p class="text-sm mb-6 leading-relaxed text-slate-600 dark:text-slate-400">${p.desc}</p>
-                    <button class="w-full py-3 rounded-lg text-sm font-semibold bg-slate-50 dark:bg-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-900 hover:text-white dark:hover:bg-blue-600 transition-all flex items-center justify-center gap-2">
-                        Contacter l'expert <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    <h3 class="text-xl font-black mb-4 dark:text-white group-hover:text-blue-700 dark:group-hover:text-blue-400 transition-colors">${p.name}</h3>
+                    <p class="text-base font-bold mb-8 leading-relaxed text-slate-700 dark:text-slate-400">${p.desc}</p>
+                    <button class="w-full py-4 rounded-xl font-black bg-slate-100 dark:bg-slate-700 text-slate-900 dark:text-white hover:bg-slate-950 hover:text-white dark:hover:bg-blue-600 transition-all flex items-center justify-center gap-3">
+                        Voir l'expert <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                     </button>
                 </div>
             `;
