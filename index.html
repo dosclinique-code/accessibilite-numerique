@@ -1,0 +1,359 @@
+import React, { useState, useEffect } from 'react';
+import { 
+  FileText, 
+  ShieldCheck, 
+  Users, 
+  Download, 
+  ArrowRight, 
+  CheckCircle2, 
+  ExternalLink,
+  Info,
+  Mail,
+  Search,
+  Sun,
+  Moon
+} from 'lucide-react';
+
+const App = () => {
+  const [email, setEmail] = useState('');
+  const [submitted, setSubmitted] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
+
+  // Basculer le mode sombre
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
+  // Liste des 10 prestataires
+  const partners = [
+    { name: "Aigyros Expertise", desc: "Audit stratégique & Accompagnement RGAA", specialty: "Conseil", primary: true },
+    { name: "DevInclusif", desc: "Développement web accessible", specialty: "Technique" },
+    { name: "Design4All", desc: "UX/UI Design et accessibilité cognitive", specialty: "Design" },
+    { name: "AccessiAudit", desc: "Vérification de conformité et certification", specialty: "Audit" },
+    { name: "FormationNum", desc: "Formation des équipes au RGAA 4.1", specialty: "Formation" },
+    { name: "DocAccessible", desc: "Mise en conformité des PDF et documents", specialty: "Contenu" },
+    { name: "AppInclusion", desc: "Accessibilité des applications mobiles", specialty: "Mobile" },
+    { name: "VideoSens", desc: "Sous-titrage et audiodescription", specialty: "Média" },
+    { name: "TestUser", desc: "Tests utilisateurs en situation de handicap", specialty: "Tests" },
+    { name: "GovWeb Solutions", desc: "Spécialiste portails administrations publiques", specialty: "Secteur Public" },
+  ];
+
+  const handleDownload = (e) => {
+    e.preventDefault();
+    if (email) setSubmitted(true);
+  };
+
+  return (
+    <div className={`min-h-screen font-sans transition-colors duration-300 ${darkMode ? 'bg-slate-950 text-slate-100' : 'bg-slate-50 text-slate-900'}`}>
+      
+      {/* Disclaimer de tête */}
+      <div className={`${darkMode ? 'bg-amber-900/20 border-amber-900/30 text-amber-200' : 'bg-amber-50 border-amber-200 text-amber-800'} border-b py-2 px-4 text-center transition-colors`}>
+        <p className="text-xs flex items-center justify-center gap-2">
+          <Info size={14} />
+          Portail d'information privé indépendant de l'administration française. 
+          Pour les services officiels, consultez <a href="https://www.numerique.gouv.fr" className="underline font-bold">numerique.gouv.fr</a>
+        </p>
+      </div>
+
+      {/* Navigation */}
+      <nav className={`sticky top-0 z-50 border-b transition-colors ${darkMode ? 'bg-slate-900/80 border-slate-800' : 'bg-white/80 border-slate-200'} backdrop-blur-md`}>
+        <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <div className="bg-blue-600 p-1.5 rounded-lg">
+              <ShieldCheck className="text-white" size={24} />
+            </div>
+            <span className={`font-bold text-lg tracking-tight uppercase ${darkMode ? 'text-white' : 'text-slate-800'}`}>
+              Accessibilité<span className="text-blue-600">Numérique</span>.fr
+            </span>
+          </div>
+          <div className="flex items-center gap-4 md:gap-8 text-sm font-medium">
+            <div className="hidden md:flex gap-8 text-slate-500 dark:text-slate-400">
+              <a href="#loi" className="hover:text-blue-600 transition-colors">La Loi</a>
+              <a href="#ressources" className="hover:text-blue-600 transition-colors">Ressources</a>
+              <a href="#prestataires" className="hover:text-blue-600 transition-colors">Prestataires</a>
+            </div>
+            
+            <div className="flex items-center gap-2">
+              {/* Bouton Dark Mode */}
+              <button 
+                onClick={toggleDarkMode}
+                className={`p-2 rounded-full transition-all ${darkMode ? 'bg-slate-800 text-yellow-400 hover:bg-slate-700' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
+                aria-label="Changer le mode d'affichage"
+              >
+                {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+              </button>
+
+              <a href="https://aigyros.com" className={`px-4 py-2 rounded-full transition-all flex items-center gap-2 ${darkMode ? 'bg-blue-600 text-white hover:bg-blue-500' : 'bg-slate-900 text-white hover:bg-blue-700'}`}>
+                <span className="hidden sm:inline">Expertise</span> Aigyros <ArrowRight size={14} />
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <header className={`relative py-20 overflow-hidden transition-colors ${darkMode ? 'bg-slate-950' : 'bg-white'}`}>
+        <div className="max-w-7xl mx-auto px-4 relative z-10 text-center">
+          <div className={`inline-flex items-center gap-2 px-4 py-1 rounded-full text-sm font-semibold mb-6 ${darkMode ? 'bg-blue-900/30 text-blue-400' : 'bg-blue-50 text-blue-700'}`}>
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+            </span>
+            Référence RGAA 4.1 & Accessibilité
+          </div>
+          <h1 className={`text-4xl md:text-6xl font-extrabold mb-6 leading-tight ${darkMode ? 'text-white' : 'text-slate-900'}`}>
+            Rendez le web <span className="text-blue-600 underline decoration-blue-200/30 decoration-8 underline-offset-4">accessible</span> à tous.
+          </h1>
+          <p className={`text-xl max-w-2xl mx-auto mb-10 ${darkMode ? 'text-slate-400' : 'text-slate-600'}`}>
+            Le portail de référence pour comprendre les obligations du RGAA, 
+            accéder aux guides officiels et trouver les meilleurs experts en France.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#ressources" className="px-8 py-4 bg-blue-600 text-white rounded-xl font-bold shadow-lg shadow-blue-500/20 hover:bg-blue-700 hover:-translate-y-1 transition-all flex items-center justify-center gap-2 text-lg text-center">
+              <Download size={20} /> Télécharger le Guide Officiel
+            </a>
+            <a href="#prestataires" className={`px-8 py-4 border-2 rounded-xl font-bold transition-all flex items-center justify-center gap-2 text-lg text-center ${darkMode ? 'bg-slate-900 border-slate-700 text-slate-300 hover:border-blue-500' : 'bg-white border-slate-200 text-slate-700 hover:border-blue-600 hover:text-blue-600'}`}>
+              <Users size={20} /> Voir les Prestataires
+            </a>
+          </div>
+        </div>
+      </header>
+
+      {/* Chiffres Clés */}
+      <section id="loi" className={`py-16 border-y transition-colors ${darkMode ? 'bg-slate-900/50 border-slate-800' : 'bg-slate-50 border-slate-200'}`}>
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div className="p-8">
+              <div className="text-4xl font-bold text-blue-500 mb-2">12 Millions</div>
+              <p className={darkMode ? 'text-slate-400' : 'text-slate-600'}>De français en situation de handicap concernés par l'accessibilité.</p>
+            </div>
+            <div className="p-8">
+              <div className="text-4xl font-bold text-blue-500 mb-2">100%</div>
+              <p className={darkMode ? 'text-slate-400' : 'text-slate-600'}>Taux de conformité obligatoire pour les services publics et grandes entreprises.</p>
+            </div>
+            <div className="p-8">
+              <div className="text-4xl font-bold text-blue-500 mb-2">25 000€</div>
+              <p className={darkMode ? 'text-slate-400' : 'text-slate-600'}>Amende annuelle encourue en cas de non-publication de la déclaration d'accessibilité.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Guide Officiel & Lead Magnet */}
+      <section id="ressources" className={`py-20 transition-colors ${darkMode ? 'bg-slate-950' : 'bg-white'}`}>
+        <div className="max-w-7xl mx-auto px-4">
+          <div className={`${darkMode ? 'bg-slate-900 border border-slate-800' : 'bg-slate-900'} rounded-3xl overflow-hidden flex flex-col lg:flex-row shadow-2xl shadow-black/20`}>
+            <div className="lg:w-1/2 p-12 lg:p-20 text-white">
+              <h2 className="text-3xl font-bold mb-6">Recevez le Kit Complet RGAA</h2>
+              <ul className="space-y-4 mb-8 text-slate-300">
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="text-blue-400 shrink-0" size={20} />
+                  <span>Dernière version du référentiel officiel (v4.1)</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="text-blue-400 shrink-0" size={20} />
+                  <span>Modèle de déclaration d'accessibilité légal</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="text-blue-400 shrink-0" size={20} />
+                  <span>Checklist des 106 critères de contrôle</span>
+                </li>
+              </ul>
+              {!submitted ? (
+                <form onSubmit={handleDownload} className="flex flex-col sm:flex-row gap-3">
+                  <input 
+                    type="email" 
+                    placeholder="Votre email professionnel" 
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="flex-1 px-6 py-4 rounded-xl text-slate-900 focus:outline-none focus:ring-4 focus:ring-blue-500/50"
+                  />
+                  <button className="bg-blue-600 hover:bg-blue-500 px-8 py-4 rounded-xl font-bold transition-colors">
+                    Recevoir le kit
+                  </button>
+                </form>
+              ) : (
+                <div className="bg-blue-500/20 border border-blue-500/30 p-6 rounded-xl text-center">
+                  <p className="font-bold text-xl mb-2 text-blue-400">✅ C'est en route !</p>
+                  <p className="text-blue-100/70">Vérifiez votre boîte mail pour accéder aux documents.</p>
+                </div>
+              )}
+              <p className="mt-4 text-xs text-slate-500">
+                En soumettant ce formulaire, vous acceptez de recevoir des informations de la part du portail et de son partenaire Aigyros.
+              </p>
+            </div>
+            <div className={`lg:w-1/2 flex items-center justify-center p-12 transition-colors ${darkMode ? 'bg-slate-800' : 'bg-blue-100'}`}>
+               <div className={`relative w-64 h-80 rounded-lg shadow-2xl flex flex-col p-6 transform rotate-3 hover:rotate-0 transition-transform duration-500 ${darkMode ? 'bg-slate-900 border border-slate-700' : 'bg-white'}`}>
+                  <div className="w-12 h-12 bg-blue-600 rounded-full mb-6 flex items-center justify-center">
+                    <FileText className="text-white" />
+                  </div>
+                  <div className={`h-4 w-3/4 rounded mb-3 ${darkMode ? 'bg-slate-700' : 'bg-slate-200'}`}></div>
+                  <div className={`h-4 w-full rounded mb-3 ${darkMode ? 'bg-slate-800' : 'bg-slate-100'}`}></div>
+                  <div className={`h-4 w-full rounded mb-3 ${darkMode ? 'bg-slate-800' : 'bg-slate-100'}`}></div>
+                  <div className="mt-auto h-10 w-full bg-blue-600 rounded"></div>
+                  <div className="absolute -top-4 -right-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase shadow-lg">Officiel</div>
+               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Annuaire des Prestataires */}
+      <section id="prestataires" className={`py-24 transition-colors ${darkMode ? 'bg-slate-900' : 'bg-slate-50'}`}>
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Écosystème de l'Accessibilité en France</h2>
+            <p className={`max-w-2xl mx-auto text-lg ${darkMode ? 'text-slate-400' : 'text-slate-600'}`}>
+              Nous avons sélectionné pour vous les acteurs de confiance pour vous accompagner dans votre mise en conformité numérique.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {partners.map((partner, index) => (
+              <div key={index} className={`p-8 rounded-2xl border transition-all duration-300 group shadow-sm hover:shadow-xl ${
+                darkMode 
+                ? `bg-slate-800 border-slate-700 ${partner.primary ? 'ring-2 ring-blue-500/30 border-blue-500/50' : ''}` 
+                : `bg-white border-slate-200 ${partner.primary ? 'ring-4 ring-blue-500/5 border-blue-300' : ''}`
+              }`}>
+                <div className="flex justify-between items-start mb-4">
+                  <span className={`text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full ${darkMode ? 'bg-blue-900/50 text-blue-300' : 'bg-blue-50 text-blue-600'}`}>
+                    {partner.specialty}
+                  </span>
+                  {partner.primary && <span className={`text-[10px] px-2 py-0.5 rounded font-bold uppercase ${darkMode ? 'bg-blue-600 text-white' : 'bg-slate-900 text-white'}`}>Partenaire Or</span>}
+                </div>
+                <h3 className={`text-xl font-bold mb-3 group-hover:text-blue-500 transition-colors ${darkMode ? 'text-white' : 'text-slate-900'}`}>{partner.name}</h3>
+                <p className={`text-sm mb-6 leading-relaxed ${darkMode ? 'text-slate-400' : 'text-slate-600'}`}>
+                  {partner.desc}
+                </p>
+                <button className={`w-full py-3 rounded-lg text-sm font-semibold transition-all flex items-center justify-center gap-2 ${darkMode ? 'bg-slate-700 text-slate-300 hover:bg-blue-600 hover:text-white' : 'bg-slate-50 text-slate-700 hover:bg-slate-900 hover:text-white'}`}>
+                  Contacter l'expert <ExternalLink size={14} />
+                </button>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-16 text-center">
+            <div className={`inline-block p-1 rounded-full px-6 py-2 text-sm ${darkMode ? 'bg-slate-800 text-slate-500' : 'bg-slate-200 text-slate-600'}`}>
+              Vous êtes un expert de l'accessibilité ? <a href="#" className="font-bold text-blue-500 hover:underline">Rejoignez l'annuaire</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Focus AIGYROS */}
+      <section className="py-20 bg-blue-600 text-white">
+        <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
+          <div className="md:w-1/2">
+            <h2 className="text-4xl font-bold mb-6">Besoin d'un audit complet et certifié ?</h2>
+            <p className="text-blue-100 text-lg mb-8">
+              Aigyros est le partenaire technique du portail. Nous réalisons vos audits de conformité RGAA 4.1, 
+              formons vos développeurs et vous accompagnons jusqu'à la publication de votre déclaration d'accessibilité.
+            </p>
+            <div className="flex flex-col gap-4">
+              <div className="flex items-center gap-3">
+                <div className="bg-blue-500 p-1 rounded-full"><CheckCircle2 size={18} /></div>
+                <span>Audits certifiés par des experts reconnus</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="bg-blue-500 p-1 rounded-full"><CheckCircle2 size={18} /></div>
+                <span>Garantie de conformité légale</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="bg-blue-500 p-1 rounded-full"><CheckCircle2 size={18} /></div>
+                <span>Support technique prioritaire</span>
+              </div>
+            </div>
+          </div>
+          <div className={`md:w-1/2 rounded-3xl p-10 shadow-2xl transition-colors ${darkMode ? 'bg-slate-900 text-white shadow-blue-900/20' : 'bg-white text-slate-900 shadow-blue-900/40'}`}>
+            <h3 className="text-2xl font-bold mb-6">Parlons de votre projet</h3>
+            <form className="space-y-4">
+              <div>
+                <label className="block text-sm font-semibold mb-1">Votre Organisation</label>
+                <input type="text" className={`w-full px-4 py-3 rounded-lg border focus:border-blue-500 focus:outline-none ${darkMode ? 'bg-slate-800 border-slate-700 text-white' : 'bg-white border-slate-200'}`} placeholder="Ex: Mairie de Paris, Groupe ABC..." />
+              </div>
+              <div>
+                <label className="block text-sm font-semibold mb-1">Email</label>
+                <input type="email" className={`w-full px-4 py-3 rounded-lg border focus:border-blue-500 focus:outline-none ${darkMode ? 'bg-slate-800 border-slate-700 text-white' : 'bg-white border-slate-200'}`} placeholder="nom@entreprise.fr" />
+              </div>
+              <div>
+                <label className="block text-sm font-semibold mb-1">Message</label>
+                <textarea className={`w-full px-4 py-3 rounded-lg border focus:border-blue-500 focus:outline-none h-24 ${darkMode ? 'bg-slate-800 border-slate-700 text-white' : 'bg-white border-slate-200'}`} placeholder="Décrivez votre besoin d'audit..."></textarea>
+              </div>
+              <button className="w-full py-4 bg-blue-600 text-white rounded-lg font-bold hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/20">
+                Demander un devis gratuit
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className={`py-20 border-t transition-colors ${darkMode ? 'bg-slate-950 border-slate-900 text-slate-500' : 'bg-slate-900 border-slate-800 text-slate-400'}`}>
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            <div className="col-span-1 md:col-span-2">
+              <div className="flex items-center gap-2 mb-6 text-white">
+                <ShieldCheck size={24} className="text-blue-500" />
+                <span className="font-bold text-lg tracking-tight uppercase">
+                  Accessibilité<span className="text-blue-500">Numérique</span>.fr
+                </span>
+              </div>
+              <p className="max-w-sm mb-6 leading-relaxed">
+                Le portail indépendant dédié à la promotion de l'accessibilité web en France. 
+                Nous aidons les organisations à devenir inclusives.
+              </p>
+              <div className="flex gap-4">
+                <a href="#" className="hover:text-white transition-colors"><Mail size={20} /></a>
+                <a href="#" className="hover:text-white transition-colors"><Search size={20} /></a>
+              </div>
+            </div>
+            <div>
+              <h4 className="text-white font-bold mb-6">Ressources</h4>
+              <ul className="space-y-3 text-sm">
+                <li><a href="#" className="hover:text-blue-400 transition-colors">Référentiel RGAA 4.1</a></li>
+                <li><a href="#" className="hover:text-blue-400 transition-colors">Guide du design inclusif</a></li>
+                <li><a href="#" className="hover:text-blue-400 transition-colors">Calendrier légal 2026</a></li>
+                <li><a href="#" className="hover:text-blue-400 transition-colors">Blog Expertise</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-white font-bold mb-6">Partenaires</h4>
+              <ul className="space-y-3 text-sm">
+                <li><a href="https://aigyros.com" className="hover:text-blue-400 transition-colors font-bold text-blue-500">Aigyros Expertise</a></li>
+                <li><a href="#" className="hover:text-blue-400 transition-colors text-slate-500">AFNIC</a></li>
+                <li><a href="#" className="hover:text-blue-400 transition-colors text-slate-500">DINUM</a></li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className={`pt-8 border-t ${darkMode ? 'border-slate-900' : 'border-slate-800'}`}>
+            <div className={`p-6 rounded-xl mb-8 ${darkMode ? 'bg-slate-900' : 'bg-slate-800/50'}`}>
+              <h5 className="text-xs font-bold text-slate-300 uppercase mb-3 flex items-center gap-2">
+                <ShieldCheck size={14} className="text-blue-500" /> Clause de non-affiliation
+              </h5>
+              <p className="text-[11px] leading-relaxed italic">
+                La présente communication et ce portail web sont édités par la société **Aigyros**, société commerciale privée. 
+                Nous ne sommes ni affiliés, ni mandatés par une administration publique ou un organisme d’État. 
+                Les documents officiels transmis le sont à titre purement informatif. 
+                La liste des prestataires regroupe des partenaires privés indépendants. 
+                Cette liste n'est pas exhaustive et ne constitue en aucun cas une recommandation ou un agrément de la part des services publics. 
+                Le destinataire reste libre de choisir tout autre professionnel de son choix.
+              </p>
+            </div>
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
+              <p>© 2025 Accessibilité Numérique France - Une initiative Aigyros.</p>
+              <div className="flex gap-6">
+                <a href="#" className="hover:text-white transition-colors">Mentions Légales</a>
+                <a href="#" className="hover:text-white transition-colors">Confidentialité</a>
+                <a href="#" className="hover:text-white transition-colors text-blue-500 font-medium">Accessibilité du site</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default App;
