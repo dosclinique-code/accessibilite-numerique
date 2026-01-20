@@ -6,51 +6,64 @@
     <title>Portail de l'Accessibilité Numérique | Information et Conformité RGAA</title>
     <meta name="description" content="Comprendre l'accessibilité numérique, ses enjeux, les bénéfices pour les citoyens et les obligations légales (RGAA).">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --blue-france: #000091;
             --blue-france-main: #000091;
             --text-main: #161616;
             --bg-alt: #f6f6f6;
-            --border-default: #e5e5e5;
+            --border-strong: #161616;
         }
         body { 
             font-family: 'Inter', sans-serif; 
             color: var(--text-main);
             line-height: 1.6;
             background-color: #ffffff;
+            font-size: 1.1rem;
         }
-        .dark { background-color: #161616; color: #eeeeee; }
+        .dark { background-color: #121212; color: #ffffff; }
         
-        /* Styles Institutionnels DSFR */
+        /* Styles Institutionnels DSFR Renforcés */
         .marianne-logo {
-            border-left: 2px solid var(--blue-france);
-            padding-left: 0.75rem;
-            line-height: 1.1;
+            border-left: 3px solid var(--blue-france);
+            padding-left: 1rem;
+            line-height: 1.2;
         }
-        .section-padding { padding: 4rem 1rem; }
+        .section-padding { padding: 5rem 1rem; }
+        
         .card-gov {
-            border: 1px solid var(--border-default);
-            padding: 2rem;
+            border: 2px solid var(--border-strong);
+            padding: 2.5rem;
             height: 100%;
-            transition: background-color 0.2s;
+            background-color: #ffffff;
+            box-shadow: 4px 4px 0px 0px var(--blue-france);
+            transition: transform 0.2s, box-shadow 0.2s;
         }
-        .card-gov:hover { background-color: var(--bg-alt); }
-        .dark .card-gov { border-color: #3a3a3a; }
-        .dark .card-gov:hover { background-color: #242424; }
+        .card-gov:hover { 
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px 0px var(--blue-france);
+        }
+        .dark .card-gov { 
+            border-color: #ffffff; 
+            background-color: #1e1e1e;
+            box-shadow: 4px 4px 0px 0px #8585ff;
+        }
 
         .btn-primary {
             background-color: var(--blue-france);
             color: white;
-            padding: 0.75rem 1.5rem;
-            font-weight: 700;
+            padding: 1rem 2rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         .btn-secondary {
-            border: 1px solid var(--blue-france);
+            border: 2px solid var(--blue-france);
             color: var(--blue-france);
-            padding: 0.75rem 1.5rem;
-            font-weight: 700;
+            padding: 1rem 2rem;
+            font-weight: 800;
+            text-transform: uppercase;
         }
         .dark .btn-secondary { border-color: #8585ff; color: #8585ff; }
 
@@ -66,40 +79,49 @@
         .skip-link:focus { top: 0; }
 
         .tricolor-line {
-            height: 4px;
-            background: linear-gradient(to right, #000091 33.3%, #ffffff 33.3%, #ffffff 66.6%, #e1000f 66.6%);
+            height: 6px;
+            background: linear-gradient(to right, #000091 33.3%, #eeeeee 33.3%, #eeeeee 66.6%, #e1000f 66.6%);
         }
 
-        h2 { font-weight: 800; font-size: 2rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--blue-france); display: inline-block; padding-bottom: 0.5rem; }
-        .dark h2 { border-color: #8585ff; }
+        h1 { font-weight: 900; line-height: 1.1; }
+        h2 { font-weight: 900; font-size: 2.5rem; margin-bottom: 2rem; color: var(--blue-france); }
+        .dark h2 { color: #8585ff; }
+
+        .highlight-box {
+            background-color: var(--bg-alt);
+            border-left: 8px solid var(--blue-france);
+            padding: 2rem;
+        }
+        .dark .highlight-box { background-color: #242424; border-left-color: #8585ff; }
     </style>
 </head>
 <body class="transition-colors duration-200">
 
     <a href="#main-content" class="skip-link font-bold">Aller au contenu principal</a>
 
-    <!-- Header Institutionnel -->
-    <header class="border-b border-slate-200 dark:border-slate-800">
+    <!-- Header Institutionnel Très Visible -->
+    <header class="border-b-4 border-slate-900 dark:border-white bg-white dark:bg-[#121212] sticky top-0 z-50">
         <div class="tricolor-line"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
             <div class="flex justify-between items-center">
-                <div class="flex items-center gap-8">
-                    <div class="marianne-logo font-bold tracking-tighter uppercase text-xs flex flex-col">
+                <div class="flex items-center gap-10">
+                    <div class="marianne-logo font-black tracking-tighter uppercase text-sm flex flex-col">
                         <span>République</span>
                         <span>Française</span>
-                        <div class="mt-1 h-0.5 w-6 bg-blue-800"></div>
+                        <div class="mt-1 h-1 w-8 bg-blue-800"></div>
                     </div>
+                    <div class="h-10 w-px bg-slate-300 hidden md:block"></div>
                     <div>
-                        <p class="font-extrabold text-lg uppercase leading-tight">
-                            Accessibilité<br><span class="text-[#000091] dark:text-blue-400">Numérique</span>
+                        <p class="font-black text-xl uppercase leading-none tracking-tight">
+                            Accessibilité<br><span class="text-[#000091] dark:text-[#8585ff]">Numérique</span>
                         </p>
                     </div>
                 </div>
-                <nav class="hidden lg:flex items-center gap-6 text-sm font-bold uppercase tracking-wide">
-                    <a href="#definition" class="hover:underline">Comprendre</a>
-                    <a href="#loi" class="hover:underline">Règlementation</a>
-                    <a href="#ressources" class="hover:underline">Documentation</a>
-                    <button onclick="toggleDarkMode()" class="p-2 border border-slate-200 dark:border-slate-700 rounded" aria-label="Changer le thème">
+                <nav class="hidden lg:flex items-center gap-8 text-sm font-black uppercase tracking-widest">
+                    <a href="#definition" class="hover:text-blue-800 underline decoration-4 decoration-transparent hover:decoration-blue-800 transition-all">Comprendre</a>
+                    <a href="#loi" class="hover:text-blue-800 underline decoration-4 decoration-transparent hover:decoration-blue-800 transition-all">Lois</a>
+                    <a href="#ressources" class="hover:text-blue-800 underline decoration-4 decoration-transparent hover:decoration-blue-800 transition-all">Ressources</a>
+                    <button onclick="toggleDarkMode()" class="p-3 bg-slate-100 dark:bg-slate-800 rounded-full border-2 border-slate-900 dark:border-white" aria-label="Changer le thème">
                         <svg id="sun-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"></path></svg>
                         <svg id="moon-icon" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
                     </button>
@@ -109,166 +131,177 @@
     </header>
 
     <main id="main-content">
-        <!-- Introduction et Définition -->
-        <section class="bg-white dark:bg-[#161616] section-padding" id="definition">
+        <!-- Hero: Très contrasté -->
+        <section class="bg-white dark:bg-[#121212] py-20 border-b-2 border-slate-100 dark:border-slate-800">
             <div class="max-w-7xl mx-auto px-4">
-                <div class="max-w-3xl">
-                    <h1 class="text-4xl md:text-5xl font-extrabold mb-8">Qu'est-ce que l'accessibilité numérique ?</h1>
-                    <p class="text-xl mb-6 font-medium">
-                        L'accessibilité numérique consiste à rendre les services en ligne (sites web, applications, documents PDF) utilisables par tous les citoyens, **sans discrimination**, quel que soit leur matériel ou leurs capacités physiques et mentales.
+                <div class="max-w-4xl">
+                    <h1 class="text-5xl md:text-7xl mb-10 text-slate-900 dark:text-white">
+                        L'accessibilité numérique : <br>
+                        <span class="bg-[#000091] text-white px-4">un droit fondamental.</span>
+                    </h1>
+                    <p class="text-2xl mb-10 font-bold leading-tight text-slate-700 dark:text-slate-300">
+                        Parce que le web doit être accessible à tous les citoyens, sans exception. Comprenez les enjeux et mettez-vous en conformité avec la loi.
                     </p>
-                    <div class="bg-blue-50 dark:bg-blue-900/20 p-6 border-l-4 border-blue-800 mb-8">
-                        <p class="text-lg italic">
-                            "Un site accessible permet à une personne aveugle de naviguer via un lecteur d'écran, à une personne sourde de suivre une vidéo sous-titrée, ou à une personne ayant des troubles moteurs de naviguer uniquement avec le clavier."
+                    <div class="flex flex-wrap gap-5">
+                        <a href="#loi" class="btn-primary flex items-center gap-3">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clip-rule="evenodd"></path></svg>
+                            Voir les obligations légales
+                        </a>
+                        <a href="#definition" class="btn-secondary">Qu'est-ce que c'est ?</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Définition Claire -->
+        <section class="section-padding bg-[#f6f6f6] dark:bg-[#1a1a1a]" id="definition">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2>C'est quoi, concrètement ?</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6 text-xl">
+                        <p class="font-bold">
+                            C'est la garantie que chaque citoyen peut utiliser vos outils numériques, peu importe ses capacités.
                         </p>
+                        <div class="highlight-box">
+                            <p class="text-2xl font-black mb-4">Un exemple simple :</p>
+                            <p class="italic">"Imaginez devoir remplir votre déclaration d'impôts mais ne pas pouvoir utiliser votre souris. L'accessibilité permet de tout faire avec le clavier."</p>
+                        </div>
                     </div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-                    <div class="card-gov">
-                        <h3 class="font-bold text-lg mb-3">Inclusion Sociale</h3>
-                        <p class="text-sm">Permettre aux 12 millions de Français en situation de handicap d'accéder aux services essentiels (impôts, santé, éducation).</p>
-                    </div>
-                    <div class="card-gov">
-                        <h3 class="font-bold text-lg mb-3">Confort pour tous</h3>
-                        <p class="text-sm">Bénéficie aussi aux seniors, aux personnes en situation de handicap temporaire ou aux utilisateurs sur mobile.</p>
-                    </div>
-                    <div class="card-gov">
-                        <h3 class="font-bold text-lg mb-3">Qualité Technique</h3>
-                        <p class="text-sm">Un site accessible est mieux codé, plus rapide et mieux référencé par les moteurs de recherche (SEO).</p>
-                    </div>
-                    <div class="card-gov">
-                        <h3 class="font-bold text-lg mb-3">Conformité Légale</h3>
-                        <p class="text-sm">Respecter les droits fondamentaux des citoyens et éviter les sanctions administratives.</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="bg-white dark:bg-[#242424] p-6 border-2 border-slate-900 dark:border-white">
+                            <p class="text-3xl mb-2">👁️</p>
+                            <p class="font-black uppercase text-sm">Visuel</p>
+                            <p class="text-xs mt-2">Lecteurs d'écran, contrastes élevés, textes alternatifs.</p>
+                        </div>
+                        <div class="bg-white dark:bg-[#242424] p-6 border-2 border-slate-900 dark:border-white">
+                            <p class="text-3xl mb-2">👂</p>
+                            <p class="font-black uppercase text-sm">Auditif</p>
+                            <p class="text-xs mt-2">Sous-titres, transcriptions, signaux visuels.</p>
+                        </div>
+                        <div class="bg-white dark:bg-[#242424] p-6 border-2 border-slate-900 dark:border-white">
+                            <p class="text-3xl mb-2">🖐️</p>
+                            <p class="font-black uppercase text-sm">Moteur</p>
+                            <p class="text-xs mt-2">Navigation clavier, commandes vocales.</p>
+                        </div>
+                        <div class="bg-white dark:bg-[#242424] p-6 border-2 border-slate-900 dark:border-white">
+                            <p class="text-3xl mb-2">🧠</p>
+                            <p class="font-black uppercase text-sm">Cognitif</p>
+                            <p class="text-xs mt-2">Langage clair, structure simplifiée.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Cadre Légat détaillé -->
-        <section class="section-alt section-padding" id="loi">
+        <!-- Cadre Légal: Visibilité Totale -->
+        <section class="section-padding bg-white dark:bg-[#121212]" id="loi">
             <div class="max-w-7xl mx-auto px-4">
-                <h2>Le cadre légal en vigueur</h2>
-                <div class="bg-white dark:bg-[#242424] border border-slate-200 dark:border-slate-800 p-8">
-                    <div class="flex flex-col md:flex-row gap-12">
+                <h2 class="text-center">La Loi : Ce que vous devez savoir</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-0 border-4 border-slate-900 dark:border-white overflow-hidden">
+                    <div class="p-10 border-b-4 md:border-b-0 md:border-r-4 border-slate-900 dark:border-white">
+                        <h3 class="text-3xl font-black mb-6 uppercase tracking-tighter">1. L'Obligation</h3>
+                        <p class="text-xl font-bold mb-6">L'article 47 de la loi de 2005 impose l'accessibilité aux services publics et aux grandes entreprises.</p>
+                        <div class="bg-red-50 dark:bg-red-900/20 p-4 border-2 border-red-600">
+                            <p class="font-black text-red-700 dark:text-red-400">⚠️ Jusqu'à 25 000€ d'amende par an en cas de défaut de déclaration.</p>
+                        </div>
+                    </div>
+                    <div class="p-10 bg-slate-900 text-white dark:bg-white dark:text-slate-900">
+                        <h3 class="text-3xl font-black mb-6 uppercase tracking-tighter">2. La Méthode (RGAA)</h3>
+                        <p class="text-xl font-bold mb-6">Le RGAA est le référentiel technique officiel en France.</p>
+                        <ul class="space-y-4 font-black">
+                            <li class="flex items-center gap-3"><span class="bg-blue-600 text-white px-2 py-0.5">106</span> Critères de contrôle</li>
+                            <li class="flex items-center gap-3"><span class="bg-blue-600 text-white px-2 py-0.5">3</span> Niveaux de conformité</li>
+                            <li class="flex items-center gap-3"><span class="bg-blue-600 text-white px-2 py-0.5">V4</span> Version actuelle du test</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ressources: Cartes Robustes -->
+        <section class="section-padding bg-[#f6f6f6] dark:bg-[#1a1a1a]" id="ressources">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2>Ressources Officielles</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div class="card-gov">
+                        <p class="text-xs font-black uppercase text-blue-800 dark:text-blue-300 mb-2">Pour l'administration</p>
+                        <h3 class="text-3xl font-black mb-6">Schéma Pluriannuel</h3>
+                        <p class="font-bold text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">Le document obligatoire sur 3 ans détaillant votre stratégie de mise en accessibilité.</p>
+                        <a href="#" class="btn-primary inline-block">Télécharger le modèle</a>
+                    </div>
+                    <div class="card-gov">
+                        <p class="text-xs font-black uppercase text-blue-800 dark:text-blue-300 mb-2">Pour les créateurs</p>
+                        <h3 class="text-3xl font-black mb-6">Checklist Design</h3>
+                        <p class="font-bold text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">Les 10 points essentiels à vérifier avant de mettre un site en ligne.</p>
+                        <a href="#" class="btn-secondary inline-block">Accéder à la liste</a>
+                    </div>
+                </div>
+
+                <!-- Newsletter Très Contrastée -->
+                <div class="mt-20 bg-slate-900 dark:bg-white p-12 text-white dark:text-slate-900 border-4 border-slate-900 dark:border-white">
+                    <div class="flex flex-col lg:flex-row items-center gap-10">
                         <div class="flex-1">
-                            <h3 class="text-xl font-bold mb-4">La Loi Handicap de 2005</h3>
-                            <p class="mb-4 text-slate-700 dark:text-slate-300">
-                                L’article 47 de la loi n° 2005-102 du 11 février 2005 fait de l’accessibilité une obligation pour tous les services de communication publique en ligne.
-                            </p>
-                            <h3 class="text-xl font-bold mb-4 mt-8">Le RGAA 4.1.2</h3>
-                            <p class="text-slate-700 dark:text-slate-300">
-                                Le Référentiel Général d'Amélioration de l'Accessibilité est la méthode technique pour vérifier la conformité. Il contient **106 critères** de contrôle (images, couleurs, structure, formulaires, etc.).
-                            </p>
+                            <h3 class="text-4xl font-black mb-4 uppercase italic">Veille Réglementaire</h3>
+                            <p class="text-xl font-bold opacity-80">Soyez alerté des changements de loi et des nouvelles versions du RGAA.</p>
                         </div>
-                        <div class="flex-1 bg-slate-50 dark:bg-[#1a1a1a] p-6 border-t-4 border-[#e1000f]">
-                            <h3 class="text-xl font-bold mb-4 text-[#e1000f]">Vos obligations</h3>
-                            <ul class="space-y-4 text-sm font-medium">
-                                <li class="flex items-start gap-2">
-                                    <span class="text-lg">•</span>
-                                    <span>**Publier une déclaration d'accessibilité** sur chaque site web.</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <span class="text-lg">•</span>
-                                    <span>**Afficher le taux de conformité** dès la page d'accueil.</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <span class="text-lg">•</span>
-                                    <span>**Mettre à disposition un moyen de contact** pour signaler des défauts.</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <span class="text-lg">•</span>
-                                    <span>**Établir un schéma pluriannuel** de mise en accessibilité (sur 3 ans).</span>
-                                </li>
-                            </ul>
-                        </div>
+                        <form id="lead-form" class="flex-1 flex w-full border-4 border-white dark:border-slate-900">
+                            <input type="email" required placeholder="nom@administration.fr" class="flex-1 p-5 text-slate-900 font-black focus:outline-none">
+                            <button type="submit" class="bg-blue-600 text-white px-10 font-black uppercase hover:bg-blue-700 transition-colors">S'inscrire</button>
+                        </form>
+                        <div id="lead-success" class="hidden text-2xl font-black animate-pulse">✓ INSCRIPTION VALIDÉE</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Ressources et Outils -->
-        <section class="bg-white dark:bg-[#161616] section-padding" id="ressources">
+        <!-- Annuaire Experts -->
+        <section class="section-padding bg-white dark:bg-[#121212]" id="prestataires">
             <div class="max-w-7xl mx-auto px-4">
-                <h2>Ressources pour l'administration</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-                    <div class="border border-slate-200 dark:border-slate-800 p-8 hover:shadow-lg transition-shadow">
-                        <h3 class="text-xl font-bold mb-3">Pour les décideurs</h3>
-                        <p class="text-slate-600 dark:text-slate-400 mb-6 text-sm">Comprendre les enjeux financiers et stratégiques pour votre collectivité ou entreprise.</p>
-                        <a href="#" class="btn-secondary inline-block">Guide stratégique</a>
-                    </div>
-                    <div class="border border-slate-200 dark:border-slate-800 p-8 hover:shadow-lg transition-shadow">
-                        <h3 class="text-xl font-bold mb-3">Pour les développeurs</h3>
-                        <p class="text-slate-600 dark:text-slate-400 mb-6 text-sm">Documentation technique sur l'utilisation du code ARIA et la structuration HTML sémantique.</p>
-                        <a href="#" class="btn-secondary inline-block">Guide technique</a>
-                    </div>
-                </div>
-
-                <!-- Newsletter / Veille -->
-                <div class="mt-16 bg-[#000091] p-10 text-white flex flex-col md:flex-row items-center gap-8">
-                    <div class="flex-1">
-                        <h3 class="text-2xl font-bold mb-2">Rester informé</h3>
-                        <p class="text-blue-100 font-medium italic">Recevez les évolutions réglementaires et les bonnes pratiques trimestrielles.</p>
-                    </div>
-                    <form id="lead-form" class="flex-1 flex w-full">
-                        <input type="email" required placeholder="votre.email@institution.fr" class="flex-1 p-4 text-slate-900 font-bold focus:outline-none">
-                        <button type="submit" class="bg-white text-[#000091] px-6 font-bold uppercase hover:bg-blue-50">S'abonner</button>
-                    </form>
-                    <div id="lead-success" class="hidden text-xl font-bold">Inscription confirmée.</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Liste des Prestataires (Simplifiée) -->
-        <section class="section-alt section-padding" id="prestataires">
-            <div class="max-w-7xl mx-auto px-4">
-                <h2>Annuaire des experts certifiés</h2>
-                <p class="mb-8 text-slate-600 dark:text-slate-400 font-medium">Liste des prestataires sélectionnés pour la qualité de leurs audits et accompagnements.</p>
-                <div id="partners-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- JS Injected Partners -->
+                <h2>Experts Certifiés</h2>
+                <div id="partners-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Injected by JS -->
                 </div>
             </div>
         </section>
     </main>
 
     <!-- Footer Institutionnel -->
-    <footer class="bg-white dark:bg-[#161616] border-t-2 border-[#000091] py-12">
+    <footer class="bg-slate-900 text-white pt-16 pb-8 border-t-8 border-[#000091]">
         <div class="max-w-7xl mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between gap-12">
-                <div class="max-w-xs">
-                    <div class="marianne-logo font-bold tracking-tighter uppercase text-xs flex flex-col mb-4">
+            <div class="flex flex-col md:flex-row justify-between gap-16">
+                <div class="max-w-md">
+                    <div class="marianne-logo font-black tracking-tighter uppercase text-sm flex flex-col mb-8 border-l-white">
                         <span>République</span>
                         <span>Française</span>
-                        <div class="mt-1 h-0.5 w-6 bg-blue-800"></div>
+                        <div class="mt-1 h-1 w-8 bg-blue-500"></div>
                     </div>
-                    <p class="text-[10px] font-bold text-slate-500 leading-relaxed uppercase">
-                        Portail d'information privé opéré par **Aigyros Expertise**. 
-                        Informations basées sur le RGAA et la Loi 2005-102.
+                    <p class="text-sm font-bold uppercase tracking-widest leading-relaxed opacity-60">
+                        Portail privé opéré par **Aigyros Expertise**. 
+                        Indépendant de l'administration française.
                     </p>
                 </div>
-                <div class="grid grid-cols-2 gap-12">
+                <div class="grid grid-cols-2 gap-20">
                     <div>
-                        <h4 class="font-bold text-sm mb-4 uppercase">Information</h4>
-                        <ul class="text-xs space-y-3 font-bold text-slate-600 dark:text-slate-400 uppercase tracking-tighter">
-                            <li><a href="#" class="hover:underline">Le RGAA en détail</a></li>
-                            <li><a href="#" class="hover:underline">F.A.Q Juridique</a></li>
-                            <li><a href="#" class="hover:underline">Glossaire</a></li>
+                        <h4 class="font-black text-xl mb-6 uppercase tracking-tighter text-blue-400">Plan du site</h4>
+                        <ul class="space-y-4 font-black uppercase text-sm tracking-widest">
+                            <li><a href="#" class="hover:text-blue-400">RGAA 4.1</a></li>
+                            <li><a href="#" class="hover:text-blue-400">Jurisprudence</a></li>
+                            <li><a href="#" class="hover:text-blue-400">Contact</a></li>
                         </ul>
                     </div>
                     <div>
-                        <h4 class="font-bold text-sm mb-4 uppercase">Légal</h4>
-                        <ul class="text-xs space-y-3 font-bold text-slate-600 dark:text-slate-400 uppercase tracking-tighter">
-                            <li><a href="#" class="hover:underline">Mentions Légales</a></li>
-                            <li><a href="#" class="hover:underline">Confidentialité</a></li>
-                            <li><a href="#" class="hover:underline">Plan du site</a></li>
+                        <h4 class="font-black text-xl mb-6 uppercase tracking-tighter text-blue-400">Informations</h4>
+                        <ul class="space-y-4 font-black uppercase text-sm tracking-widest">
+                            <li><a href="#" class="hover:text-blue-400">Mentions Légales</a></li>
+                            <li><a href="#" class="hover:text-blue-400">Confidentialité</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <div class="mt-12 pt-8 border-t border-slate-100 dark:border-slate-800 flex justify-between items-center">
-                <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest italic">Contenus sous licence etalab-2.0</p>
-                <div class="text-[10px] font-bold text-[#000091] dark:text-blue-400 uppercase">
-                    Accessibilité : totale (RGAA 4.1.2)
+            <div class="mt-16 pt-8 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p class="text-xs font-black uppercase tracking-widest opacity-40">Licence etalab-2.0</p>
+                <div class="px-4 py-1 border-2 border-white font-black text-xs uppercase tracking-widest">
+                    Accessibilité : 100% (Audit RGAA)
                 </div>
             </div>
         </div>
@@ -298,12 +331,9 @@
         });
 
         const partners = [
-            { name: "Aigyros Expertise", tag: "Audit & Conseil", desc: "Leader en accompagnement stratégique pour les grandes administrations." },
-            { name: "Direction Tech", tag: "Développement", desc: "Experts en accessibilité technique et remédiation de code." },
-            { name: "Inclusion-Focus", tag: "Audit", desc: "Bureau d'audit indépendant certifié pour les diagnostics RGAA." },
-            { name: "FormaNum", tag: "Formation", desc: "Centre de formation pour les agents publics et rédacteurs web." },
-            { name: "Doc-Libre", tag: "Documents", desc: "Accessibilité des documents PDF et supports de communication." },
-            { name: "Design Public", tag: "UX Design", desc: "Design d'interfaces inclusives centrées sur l'utilisateur." }
+            { name: "Aigyros Expertise", tag: "Audit & Conseil", desc: "Leader en stratégie d'inclusion pour l'administration d'État." },
+            { name: "Direction Tech", tag: "Code", desc: "Remédiation technique et développement accessible natif." },
+            { name: "Inclusion-Focus", tag: "Certification", desc: "Organisme auditeur indépendant pour la labellisation RGAA." }
         ];
 
         const grid = document.getElementById('partners-grid');
@@ -311,10 +341,10 @@
             const card = document.createElement('div');
             card.className = "card-gov flex flex-col";
             card.innerHTML = `
-                <span class="text-[10px] font-bold uppercase text-blue-800 dark:text-blue-400 mb-2">${p.tag}</span>
-                <h3 class="text-lg font-extrabold mb-3">${p.name}</h3>
-                <p class="text-sm text-slate-600 dark:text-slate-400 mb-6 flex-grow">${p.desc}</p>
-                <button class="text-xs font-black uppercase border-b-2 border-slate-900 dark:border-white self-start">Consulter la fiche</button>
+                <span class="text-[10px] font-black uppercase text-blue-800 dark:text-blue-400 mb-3 tracking-widest">${p.tag}</span>
+                <h3 class="text-2xl font-black mb-4 uppercase tracking-tighter">${p.name}</h3>
+                <p class="text-sm font-bold text-slate-600 dark:text-slate-400 mb-8 flex-grow leading-relaxed">${p.desc}</p>
+                <button class="text-xs font-black uppercase border-b-4 border-slate-900 dark:border-white self-start hover:text-blue-600 transition-colors">Fiche Expert</button>
             `;
             grid.appendChild(card);
         });
