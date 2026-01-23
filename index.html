@@ -411,73 +411,85 @@
                 name: "AIGYROS", 
                 tag: "Audit & Stratégie", 
                 desc: "Expertise en conformité numérique et innovation accessible. Audit & conformité web.",
-                contact: "aigyros.com • contact@aigyros.com • 01 85 09 95 64"
+                contact: "aigyros.com • contact@aigyros.com • 01 85 09 95 64",
+                website: "https://aigyros.com"
             },
             { 
                 name: "Kaboum Sarl", 
                 tag: "Applications Mobiles", 
                 desc: "Audit UX et accessibilité pour applications mobiles.",
-                contact: "kaboum-sarl.fr • info@kaboum-sarl.fr • 09 72 17 01 40"
+                contact: "kaboum-sarl.fr • info@kaboum-sarl.fr • 09 72 17 01 40",
+                website: "https://kaboum-sarl.fr"
             },
             { 
                 name: "Aleph0", 
                 tag: "Diagnostic RGAA", 
                 desc: "Spécialiste du diagnostic RGAA et de l'accompagnement stratégique.",
-                contact: "aleph0.fr • info@aleph0.fr • 05 19 93 01 02"
+                contact: "aleph0.fr • info@aleph0.fr • 05 19 93 01 02",
+                website: "https://aleph0.fr"
             },
             { 
                 name: "Gabbro SAS", 
                 tag: "Audit Technique", 
                 desc: "Audit technique approfondi et mise aux normes logicielles complexes.",
-                contact: "gabbro-sas.fr • contact@gabbro-sas.fr • 04 82 53 20 32"
+                contact: "gabbro-sas.fr • contact@gabbro-sas.fr • 04 82 53 20 32",
+                website: "https://gabbro-sas.fr"
             },
             { 
                 name: "Info Logistica", 
                 tag: "Ingénierie", 
                 desc: "Ingénierie de conformité pour les plateformes de services.",
-                contact: "info-logistica.fr • info@info-logistica.fr • 01 85 09 91 81"
+                contact: "info-logistica.fr • info@info-logistica.fr • 01 85 09 91 81",
+                website: "https://info-logistica.fr"
             },
             { 
                 name: "IB Info Tech", 
                 tag: "Interfaces RGAA", 
                 desc: "Développement d'interfaces nativement conformes RGAA.",
-                contact: "ibinfo-tech.fr • contact@ibinfo-tech.fr"
+                contact: "ibinfo-tech.fr • contact@ibinfo-tech.fr",
+                website: "https://ibinfo-tech.fr"
             },
             { 
                 name: "Nestor Soft", 
                 tag: "Solutions Logiciel", 
                 desc: "Solutions logicielles pour le suivi du schéma pluriannuel.",
-                contact: "nestor-soft.fr • info@nestor-soft.fr • 05 35 54 30 22"
+                contact: "nestor-soft.fr • info@nestor-soft.fr • 05 35 54 30 22",
+                website: "https://nestor-soft.fr"
             },
             { 
                 name: "Léo Web", 
                 tag: "Refonte Web", 
                 desc: "Refonte de sites web pour une accessibilité optimale.",
-                contact: "leo-web.fr • contact@leo-web.fr • 01 85 09 91 82"
+                contact: "leo-web.fr • contact@leo-web.fr • 01 85 09 91 82",
+                website: "https://leo-web.fr"
             },
             { 
                 name: "WT Advance", 
                 tag: "Consulting", 
                 desc: "Consulting stratégique et pilotage de la conformité.",
-                contact: "wt-advance.fr • contact@wt-advance.fr"
+                contact: "wt-advance.fr • contact@wt-advance.fr",
+                website: "https://wt-advance.fr"
             },
             { 
                 name: "Will Digital", 
                 tag: "Marketing Inclusif", 
                 desc: "Marketing digital inclusif et mise aux normes des contenus.",
-                contact: "will-digital.com • contact@will-digital.com"
+                contact: "will-digital.com • contact@will-digital.com",
+                website: "https://will-digital.com"
             },
             { 
                 name: "RS Consult", 
                 tag: "Management de Projet", 
                 desc: "Management de projet SI et assurance qualité accessibilité.",
-                contact: "rs-consult.fr • info@rs-consult.fr"
+                contact: "rs-consult.fr • info@rs-consult.fr",
+                website: "https://rs-consult.fr"
             },
             { 
                 name: "Goodbird", 
                 tag: "Design & PDF", 
                 desc: "Design graphique inclusif et documents (PDF) accessibles.",
-                contact: "goodbirds.fr • info@goodbirds.fr • 01 85 09 91 82"
+                contact: "goodbirds.fr • info@goodbirds.fr • 01 85 09 91 82",
+                website: "https://goodbirds.fr"
             }
         ];
 
@@ -490,7 +502,7 @@
                 <h3 class="text-xl md:text-2xl font-black mb-4 md:mb-6 uppercase tracking-tight text-[var(--text-main)]">${p.name}</h3>
                 <p class="text-sm md:text-base font-bold text-slate-700 dark:text-slate-300 mb-4 leading-relaxed">${p.desc}</p>
                 <p class="text-[10px] md:text-xs font-black text-blue-600 dark:text-blue-300 italic mb-8 flex-grow">${p.contact}</p>
-                <button class="text-[10px] md:text-sm font-black uppercase border-b-4 border-[var(--border-strong)] self-start hover:text-blue-800 hover:border-blue-800 transition-colors pb-1 text-[var(--text-main)]">Fiche Détail</button>
+                <a href="${p.website}" target="_blank" class="text-[10px] md:text-sm font-black uppercase border-b-4 border-[var(--border-strong)] self-start hover:text-blue-800 hover:border-blue-800 transition-colors pb-1 text-[var(--text-main)]">DECOUVRIR</a>
             `;
             grid.appendChild(card);
         });
