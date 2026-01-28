@@ -390,14 +390,7 @@
                         Accessibilité Numérique France est une initiative privée de conseil et n'est pas affiliée à un organisme gouvernemental.
                     </p>
                 </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-12">
-                    <div>
-                        <h4 class="font-black text-xl mb-8 text-blue-500 tracking-tight">Expertise</h4>
-                        <ul class="space-y-4 font-bold text-sm tracking-wide opacity-80">
-                            <li><a href="https://accessibilite.numerique.gouv.fr/doc/RGAA-v4.1.2.pdf" target="_blank" class="hover:text-blue-400">Documentation RGAA</a></li>
-                            <li><a href="mailto:info@accessibilite-numerique-france.fr" class="hover:text-blue-400">Contact Expert</a></li>
-                        </ul>
-                    </div>
+                <div class="grid grid-cols-1 gap-12">
                     <div>
                         <h4 class="font-black text-xl mb-8 text-blue-500 tracking-tight">Légal</h4>
                         <ul class="space-y-4 font-bold text-sm tracking-wide opacity-80">
@@ -582,7 +575,7 @@
             card.innerHTML = `
                 <span class="text-[10px] md:text-xs font-bold uppercase text-blue-600 mb-2 md:mb-4 tracking-widest">${p.tag}</span>
                 <h3 class="text-xl md:text-2xl font-black mb-4 uppercase tracking-tight text-[var(--text-main)]">${p.name}</h3>
-                <p class="text-sm md:text-base font-medium text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">${p.desc}</p>
+                <p class="text-sm md:text-base font-medium text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">${p.desc}</p>
                 <p class="text-[10px] md:text-xs font-bold text-blue-500 italic mb-8 flex-grow">${p.contact}</p>
                 <a href="${p.website}" target="_blank" class="text-[10px] md:text-sm font-bold uppercase border-b-2 border-slate-300 self-start hover:text-blue-600 hover:border-blue-600 transition-colors pb-1 text-[var(--text-main)]">En savoir plus</a>
             `;
