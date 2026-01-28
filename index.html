@@ -16,20 +16,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --blue-france: #000091;
-            --blue-france-main: #000091;
+            /* Changement vers un bleu corporate moderne, moins institutionnel */
+            --brand-main: #2563eb; 
+            --brand-dark: #1e40af;
             --text-main: #161616;
             --bg-main: #ffffff;
-            --bg-alt: #f6f6f6;
-            --border-strong: #161616;
+            --bg-alt: #f8fafc;
+            --border-strong: #1e293b;
         }
 
         /* Variables du mode sombre */
         html.dark {
-            --text-main: #f6f6f6;
-            --bg-main: #161616;
-            --bg-alt: #1e1e1e;
-            --border-strong: #f6f6f6;
+            --text-main: #f1f5f9;
+            --bg-main: #0f172a;
+            --bg-alt: #1e293b;
+            --border-strong: #f1f5f9;
         }
 
         body { 
@@ -50,11 +51,11 @@
         }
         
         .card-gov {
-            border: 3px solid var(--border-strong);
+            border: 2px solid var(--border-strong);
             padding: 1.5rem;
             height: 100%;
             background-color: var(--bg-main);
-            box-shadow: 6px 6px 0px 0px var(--blue-france);
+            box-shadow: 4px 4px 0px 0px var(--brand-main);
             transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s, border-color 0.3s;
         }
         @media (min-width: 768px) {
@@ -62,45 +63,47 @@
         }
         .card-gov:hover { 
             transform: translate(-2px, -2px);
-            box-shadow: 8px 8px 0px 0px var(--blue-france);
+            box-shadow: 6px 6px 0px 0px var(--brand-main);
         }
 
         .btn-primary {
-            background-color: var(--blue-france);
+            background-color: var(--brand-main);
             color: white;
             padding: 1rem 1.5rem;
-            font-weight: 900;
+            font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             display: inline-flex;
             align-items: center;
-            border: 3px solid var(--blue-france);
+            border: 2px solid var(--brand-main);
             text-align: center;
             justify-content: center;
+            border-radius: 0.5rem;
         }
         @media (min-width: 768px) {
             .btn-primary { padding: 1.25rem 2.5rem; }
         }
         .btn-primary:hover {
-            background-color: #1212ff;
-            border-color: #1212ff;
+            background-color: var(--brand-dark);
+            border-color: var(--brand-dark);
         }
         .btn-secondary {
-            border: 3px solid var(--blue-france);
-            color: var(--blue-france);
+            border: 2px solid var(--brand-main);
+            color: var(--brand-main);
             padding: 1rem 1.5rem;
-            font-weight: 900;
+            font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             text-align: center;
             display: inline-flex;
             justify-content: center;
+            border-radius: 0.5rem;
         }
         @media (min-width: 768px) {
             .btn-secondary { padding: 1.25rem 2.5rem; }
         }
         .btn-secondary:hover {
-            background-color: var(--blue-france);
+            background-color: var(--brand-main);
             color: white;
         }
 
@@ -108,44 +111,34 @@
             position: absolute;
             top: -100px;
             left: 0;
-            background: var(--blue-france);
+            background: var(--brand-main);
             color: white;
             padding: 1rem;
             z-index: 1000;
         }
         .skip-link:focus { top: 0; }
 
-        .tricolor-line {
-            height: 8px;
-            background: linear-gradient(to right, #000091 33.3%, #eeeeee 33.3%, #eeeeee 66.6%, #e1000f 66.6%);
-        }
-
         h1 { font-weight: 900; line-height: 1.1; color: var(--text-main); }
-        h2 { font-weight: 900; margin-bottom: 2rem; color: var(--blue-france); border-bottom: 6px solid #e1000f; display: inline-block; padding-bottom: 0.5rem; }
+        h2 { font-weight: 900; margin-bottom: 2rem; color: var(--brand-main); border-bottom: 4px solid var(--brand-main); display: inline-block; padding-bottom: 0.5rem; }
         
-        /* Adaptation dark mode pour les titres */
-        html.dark h2 { color: #6a6aff; }
+        html.dark h2 { color: #60a5fa; border-color: #60a5fa; }
 
         .highlight-box {
             background-color: var(--bg-alt);
-            border-left: 8px solid var(--blue-france);
+            border-left: 6px solid var(--brand-main);
             padding: 1.5rem;
-            border-top: 1px solid #ddd;
-            border-right: 1px solid #ddd;
-            border-bottom: 1px solid #ddd;
+            border-radius: 0.25rem;
         }
-        html.dark .highlight-box { border-color: #444; }
-
         @media (min-width: 768px) {
-            .highlight-box { border-left-width: 12px; padding: 2.5rem; }
+            .highlight-box { border-left-width: 10px; padding: 2.5rem; }
         }
 
         #mobile-menu.hidden { display: none; }
 
-        /* Style du bouton thème */
         .theme-toggle-btn {
-            border: 3px solid var(--border-strong);
+            border: 2px solid var(--border-strong);
             padding: 0.5rem;
+            border-radius: 0.5rem;
             transition: all 0.2s;
         }
         .theme-toggle-btn:hover {
@@ -154,8 +147,8 @@
 
         /* Modal Styles */
         .modal-overlay {
-            background-color: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(4px);
+            background-color: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(8px);
         }
     </style>
 </head>
@@ -167,108 +160,103 @@
 
     <a href="#main-content" class="skip-link font-bold">Aller au contenu principal</a>
 
-    <!-- Header Institutionnel Responsive -->
-    <header class="border-b-8 border-black bg-[var(--bg-main)] dark:border-white sticky top-0 z-50 transition-colors">
-        <div class="tricolor-line"></div>
+    <!-- Header Corporate -->
+    <header class="border-b-2 border-slate-200 bg-[var(--bg-main)] dark:border-slate-800 sticky top-0 z-50 transition-colors">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 md:py-6">
             <div class="flex justify-between items-center">
                 <div class="flex items-center">
                     <a href="/" class="flex items-center">
-                        <img src="https://accessibilite-numerique-france.fr/Logo-ANF.jpg" alt="ANF - Accessibilité Numérique Française" class="h-12 md:h-20 w-auto object-contain dark:brightness-200" onerror="this.src='https://placehold.co/200x80?text=LOGO+ANF'">
+                        <img src="https://accessibilite-numerique-france.fr/Logo-ANF.jpg" alt="ANF - Accessibilité Numérique Française" class="h-10 md:h-16 w-auto object-contain dark:brightness-110" onerror="this.src='https://placehold.co/200x80?text=ACCESSIBILITE+NUMERIQUE+FRANCE'">
                     </a>
                 </div>
                 
                 <div class="flex items-center gap-4">
                     <!-- Desktop Nav -->
-                    <nav class="hidden lg:flex items-center gap-10 text-sm font-black uppercase tracking-widest mr-6">
-                        <a href="#definition" class="text-[var(--text-main)] hover:text-blue-800 underline decoration-4 decoration-blue-800 underline-offset-8">Comprendre</a>
-                        <a href="#loi" class="text-[var(--text-main)] hover:text-blue-800 underline decoration-4 decoration-blue-800 underline-offset-8">Lois</a>
-                        <a href="#ressources" class="text-[var(--text-main)] hover:text-blue-800 underline decoration-4 decoration-blue-800 underline-offset-8">Ressources</a>
+                    <nav class="hidden lg:flex items-center gap-8 text-sm font-bold uppercase tracking-wider mr-6">
+                        <a href="#definition" class="text-[var(--text-main)] hover:text-blue-600">Comprendre</a>
+                        <a href="#loi" class="text-[var(--text-main)] hover:text-blue-600">Cadre Légal</a>
+                        <a href="#ressources" class="text-[var(--text-main)] hover:text-blue-600">Ressources</a>
                     </nav>
 
                     <!-- Bouton Theme Toggle -->
                     <button id="theme-toggle" class="theme-toggle-btn" aria-label="Changer le mode d'affichage">
-                        <!-- Sun Icon -->
-                        <svg id="theme-toggle-dark-icon" class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
-                        <!-- Moon Icon -->
-                        <svg id="theme-toggle-light-icon" class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
                     </button>
 
                     <!-- Mobile Menu Button -->
-                    <button id="menu-btn" class="lg:hidden p-2 border-4 border-black dark:border-white" aria-label="Menu">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    <button id="menu-btn" class="lg:hidden p-2 border-2 border-slate-300 dark:border-slate-700 rounded-md" aria-label="Menu">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                     </button>
                 </div>
             </div>
         </div>
         
         <!-- Mobile Nav Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden border-t-4 border-black dark:border-white bg-[var(--bg-main)]">
-            <nav class="flex flex-col font-black uppercase tracking-widest p-4 space-y-4">
-                <a href="#definition" class="py-2 border-b-2 border-slate-100 dark:border-slate-800 text-[var(--text-main)]">Comprendre</a>
-                <a href="#loi" class="py-2 border-b-2 border-slate-100 dark:border-slate-800 text-[var(--text-main)]">Lois</a>
-                <a href="#ressources" class="py-2 text-[var(--text-main)]">Ressources</a>
+        <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 dark:border-slate-800 bg-[var(--bg-main)] shadow-xl">
+            <nav class="flex flex-col font-bold uppercase tracking-wider p-6 space-y-6">
+                <a href="#definition" class="text-[var(--text-main)]">Comprendre</a>
+                <a href="#loi" class="text-[var(--text-main)]">Lois</a>
+                <a href="#ressources" class="text-[var(--text-main)]">Ressources</a>
             </nav>
         </div>
     </header>
 
     <main id="main-content">
         <!-- Hero Section -->
-        <section class="py-12 md:py-24 border-b-4 border-slate-200 dark:border-slate-800 bg-[var(--bg-main)]">
-            <div class="max-w-7xl mx-auto px-4">
+        <section class="py-16 md:py-32 bg-gradient-to-br from-white to-blue-50 dark:from-slate-900 dark:to-slate-800">
+            <div class="max-w-7xl mx-auto px-4 text-center md:text-left">
                 <div class="max-w-4xl">
-                    <h1 class="text-4xl sm:text-6xl md:text-8xl mb-8 md:mb-12">
+                    <h1 class="text-4xl sm:text-6xl md:text-7xl mb-6 md:mb-10 tracking-tight">
                         L'accessibilité numérique : <br>
-                        <span class="bg-[#000091] text-white px-4 md:px-6 py-1 md:py-2 inline-block mt-2 md:mt-4">un droit pour tous.</span>
+                        <span class="text-blue-600 inline-block mt-2">un impératif stratégique.</span>
                     </h1>
-                    <p class="text-xl md:text-3xl mb-8 md:mb-12 font-extrabold leading-tight text-[var(--text-main)]">
-                        <comment-tag id="1">Le web doit être accessible à chaque citoyen, sans exception. Comprenez vos obligations et les enjeux de l'inclusion.</comment-tag id="1">
+                    <p class="text-xl md:text-2xl mb-10 md:mb-14 font-medium text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed">
+                        Accompagner les entreprises et collectivités dans la mise en conformité RGAA et l'inclusion numérique durable.
                     </p>
-                    <div class="flex flex-col sm:flex-row gap-4 md:gap-8">
+                    <div class="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center md:justify-start">
                         <a href="#loi" class="btn-primary">
-                            <svg class="w-6 h-6 md:w-8 md:h-8 mr-2 md:mr-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clip-rule="evenodd"></path></svg>
-                            Obligations légales
+                            Consulter les obligations
                         </a>
-                        <a href="#definition" class="btn-secondary">Découvrir l'accessibilité</a>
+                        <a href="#definition" class="btn-secondary">Nos expertises</a>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Définition Section -->
-        <section class="section-padding bg-[var(--bg-alt)]" id="definition">
+        <section class="section-padding bg-[var(--bg-main)]" id="definition">
             <div class="max-w-7xl mx-auto px-4">
-                <h2 class="text-2xl md:text-5xl">C'est quoi, concrètement ?</h2>
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
-                    <div class="space-y-6 md:space-y-8 text-lg md:text-2xl">
-                        <p class="font-extrabold text-[var(--text-main)]">
-                            <comment-tag id="2">C'est permettre à n'importe qui d'utiliser un site web, quelles que soient ses capacités physiques ou mentales.</comment-tag id="2">
+                <h2 class="text-2xl md:text-5xl">Enjeux & Définition</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6 md:space-y-10 text-lg md:text-xl">
+                        <p class="font-semibold text-slate-700 dark:text-slate-300">
+                            L'accessibilité numérique garantit que tout utilisateur peut naviguer, comprendre et interagir avec les services digitaux, sans discrimination liée à un handicap.
                         </p>
-                        <div class="highlight-box">
-                            <p class="text-xl md:text-3xl font-black mb-4 md:mb-6 text-[var(--text-main)]">Exemple :</p>
-                            <p class="italic text-[var(--text-main)] font-bold text-base md:text-2xl">"Si vous ne pouvez pas utiliser une souris à cause d'un handicap moteur, un site accessible vous permet de tout faire avec votre clavier ou votre voix."</p>
+                        <div class="highlight-box shadow-sm">
+                            <p class="text-lg md:text-2xl font-bold italic text-blue-800 dark:text-blue-300">"L'inclusion numérique est un levier de performance et d'innovation pour votre organisation."</p>
                         </div>
                     </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
-                        <div class="bg-[var(--bg-main)] p-6 md:p-8 border-4 border-[var(--border-strong)]">
-                            <p class="text-3xl md:text-5xl mb-2 md:mb-4">👁️</p>
-                            <p class="font-black uppercase text-base md:text-lg tracking-tighter text-[var(--text-main)]">Handicap Visuel</p>
-                            <p class="text-xs md:text-sm mt-2 md:mt-3 font-bold text-slate-700 dark:text-slate-300 leading-snug">Lecteurs d'écran, contrastes forts, textes alternatifs pour les images.</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="bg-[var(--bg-alt)] p-8 border-t-4 border-blue-500 rounded-lg shadow-sm">
+                            <p class="text-3xl mb-4">👁️</p>
+                            <p class="font-bold uppercase text-sm tracking-widest text-blue-600 mb-2">Visuel</p>
+                            <p class="text-sm font-medium text-slate-600 dark:text-slate-400 leading-snug">Contrastes, lecteurs d'écran et structure sémantique.</p>
                         </div>
-                        <div class="bg-[var(--bg-main)] p-6 md:p-8 border-4 border-[var(--border-strong)]">
-                            <p class="text-3xl md:text-5xl mb-2 md:mb-4">👂</p>
-                            <p class="font-black uppercase text-base md:text-lg tracking-tighter text-[var(--text-main)]">Handicap Auditif</p>
-                            <p class="text-xs md:text-sm mt-2 md:mt-3 font-bold text-slate-700 dark:text-slate-300 leading-snug">Sous-titres obligatoires, transcriptions textuelles des vidéos.</p>
+                        <div class="bg-[var(--bg-alt)] p-8 border-t-4 border-blue-500 rounded-lg shadow-sm">
+                            <p class="text-3xl mb-4">👂</p>
+                            <p class="font-bold uppercase text-sm tracking-widest text-blue-600 mb-2">Auditif</p>
+                            <p class="text-sm font-medium text-slate-600 dark:text-slate-400 leading-snug">Sous-titrage et transcriptions textuelles.</p>
                         </div>
-                        <div class="bg-[var(--bg-main)] p-6 md:p-8 border-4 border-[var(--border-strong)]">
-                            <p class="text-3xl md:text-5xl mb-2 md:mb-4">🖐️</p>
-                            <p class="font-black uppercase text-base md:text-lg tracking-tighter text-[var(--text-main)]">Handicap Moteur</p>
-                            <p class="text-xs md:text-sm mt-2 md:mt-3 font-bold text-slate-700 dark:text-slate-300 leading-snug">Navigation 100% au clavier, zones de clic larges et espacées.</p>
+                        <div class="bg-[var(--bg-alt)] p-8 border-t-4 border-blue-500 rounded-lg shadow-sm">
+                            <p class="text-3xl mb-4">🖐️</p>
+                            <p class="font-bold uppercase text-sm tracking-widest text-blue-600 mb-2">Moteur</p>
+                            <p class="text-sm font-medium text-slate-600 dark:text-slate-400 leading-snug">Navigation clavier et interfaces adaptées.</p>
                         </div>
-                        <div class="bg-[var(--bg-main)] p-6 md:p-8 border-4 border-[var(--border-strong)]">
-                            <p class="text-3xl md:text-5xl mb-2 md:mb-4">🧠</p>
-                            <p class="font-black uppercase text-base md:text-lg tracking-tighter text-[var(--text-main)]">Handicap Cognitif</p>
-                            <p class="text-xs md:text-sm mt-2 md:mt-3 font-bold text-slate-700 dark:text-slate-300 leading-snug">Langage simple (FALC), structure de page stable et prévisible.</p>
+                        <div class="bg-[var(--bg-alt)] p-8 border-t-4 border-blue-500 rounded-lg shadow-sm">
+                            <p class="text-3xl mb-4">🧠</p>
+                            <p class="font-bold uppercase text-sm tracking-widest text-blue-600 mb-2">Cognitif</p>
+                            <p class="text-sm font-medium text-slate-600 dark:text-slate-400 leading-snug">Simplicité, clarté et prévisibilité des parcours.</p>
                         </div>
                     </div>
                 </div>
@@ -276,24 +264,24 @@
         </section>
 
         <!-- Loi Section -->
-        <section class="section-padding bg-[var(--bg-main)]" id="loi">
+        <section class="section-padding bg-slate-50 dark:bg-slate-900/50" id="loi">
             <div class="max-w-7xl mx-auto px-4">
-                <h2 class="block text-center mx-auto mb-8 md:mb-16 text-2xl md:text-5xl">Le Cadre Légal Français</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-0 border-4 md:border-[6px] border-[var(--border-strong)] overflow-hidden sm:shadow-[12px_12px_0px_0px_var(--blue-france)]">
-                    <div class="p-6 md:p-12 border-b-4 md:border-b-0 md:border-r-4 border-[var(--border-strong)]">
-                        <h3 class="text-2xl md:text-4xl font-black mb-4 md:mb-8 uppercase tracking-tighter text-[var(--text-main)]">1. Lois 2005 & 28 Juin 2025</h3>
-                        <p class="text-lg md:text-2xl font-bold mb-6 md:mb-8 leading-tight text-[var(--text-main)]">L'article 47 de 2005 est renforcé par la loi du 28 juin 2025 (EAA) : l'accessibilité devient impérative pour le secteur public, le e-commerce et les services essentiels.</p>
-                        <div class="bg-red-100 dark:bg-red-900/30 p-4 md:p-6 border-4 border-red-600">
-                            <p class="font-black text-red-700 dark:text-red-400 text-base md:text-xl leading-tight uppercase tracking-tight">⚠️ Sanction : Jusqu'à 25 000€ d'amende annuelle par service non conforme.</p>
+                <h2 class="block text-center mx-auto mb-12 md:mb-20 text-2xl md:text-5xl">Cadre Légal & Réglementaire</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16">
+                    <div class="p-8 md:p-12 bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700">
+                        <h3 class="text-xl md:text-3xl font-bold mb-6 text-slate-900 dark:text-white">Lois 2005 & 28 Juin 2025</h3>
+                        <p class="text-lg font-medium text-slate-600 dark:text-slate-400 mb-8">L'article 47 de 2005 est renforcé par la loi du 28 juin 2025 (EAA) : l'accessibilité devient impérative pour le secteur public, le e-commerce et les services essentiels.</p>
+                        <div class="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-xl border-l-8 border-blue-600">
+                            <p class="font-bold text-blue-800 dark:text-blue-300 text-sm md:text-base leading-tight uppercase tracking-wide">⚠️ Sanction : Jusqu'à 25 000€ d'amende annuelle par service non conforme.</p>
                         </div>
                     </div>
-                    <div class="p-6 md:p-12 bg-black text-white">
-                        <h3 class="text-2xl md:text-4xl font-black mb-4 md:mb-8 uppercase tracking-tighter text-blue-400">2. Le RGAA V4.1.2</h3>
-                        <p class="text-lg md:text-2xl font-bold mb-6 md:mb-8 leading-tight">C'est la méthode de test officielle en France pour mesurer l'accessibilité.</p>
-                        <ul class="space-y-4 md:space-y-6 text-base md:text-xl font-black">
-                            <li class="flex items-center gap-3 md:gap-4"><span class="bg-blue-600 text-white px-2 md:px-3 py-1">106</span> Critères techniques</li>
-                            <li class="flex items-center gap-3 md:gap-4"><span class="bg-blue-600 text-white px-2 md:px-3 py-1">A / AA</span> Niveaux de conformité</li>
-                            <li class="flex items-center gap-3 md:gap-4"><span class="bg-blue-600 text-white px-2 md:px-3 py-1">DOC</span> Déclaration obligatoire</li>
+                    <div class="p-8 md:p-12 bg-slate-900 text-white rounded-2xl shadow-xl">
+                        <h3 class="text-xl md:text-3xl font-bold mb-6 text-blue-400">Référentiel RGAA 4.1.2</h3>
+                        <p class="text-lg font-medium mb-8 opacity-90">La méthode officielle de test pour mesurer et attester de la conformité de vos services numériques.</p>
+                        <ul class="space-y-4 md:space-y-6 text-base md:text-xl font-bold">
+                            <li class="flex items-center gap-4"><span class="bg-blue-600 text-white w-10 h-10 flex items-center justify-center rounded-full">106</span> Critères techniques</li>
+                            <li class="flex items-center gap-4"><span class="bg-blue-600 text-white w-10 h-10 flex items-center justify-center rounded-full">AA</span> Niveau de conformité visé</li>
+                            <li class="flex items-center gap-4"><span class="bg-blue-600 text-white w-10 h-10 flex items-center justify-center rounded-full">DOC</span> Déclaration obligatoire</li>
                         </ul>
                     </div>
                 </div>
@@ -301,31 +289,31 @@
         </section>
 
         <!-- Ressources Section -->
-        <section class="section-padding bg-[var(--bg-alt)]" id="ressources">
+        <section class="section-padding bg-[var(--bg-main)]" id="ressources">
             <div class="max-w-7xl mx-auto px-4">
                 <h2 class="text-2xl md:text-5xl">Documentation</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mt-8 md:mt-12">
-                    <div class="card-gov">
-                        <p class="text-xs font-black uppercase text-blue-800 dark:text-blue-400 mb-3 tracking-widest">Référentiel</p>
-                        <h3 class="text-2xl md:text-4xl font-black mb-4 md:mb-6 uppercase text-[var(--text-main)]">RGAA</h3>
-                        <p class="text-lg md:text-xl font-bold text-[var(--text-main)] mb-8 md:mb-10 leading-relaxed">Référentiel Général d’Amélioration de l’Accessibilité : Le document technique de référence.</p>
-                        <a href="https://accessibilite.numerique.gouv.fr/doc/RGAA-v4.1.2.pdf" target="_blank" class="btn-primary w-full justify-center">Accéder au RGAA</a>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mt-12">
+                    <div class="card-gov rounded-xl border-slate-200">
+                        <p class="text-xs font-bold uppercase text-blue-600 mb-4 tracking-widest">Expertise Technique</p>
+                        <h3 class="text-2xl md:text-4xl font-black mb-6 uppercase">RGAA</h3>
+                        <p class="text-lg font-medium text-slate-600 dark:text-slate-400 mb-10 leading-relaxed">Référentiel Général d’Amélioration de l’Accessibilité : Le document technique de référence pour vos audits.</p>
+                        <a href="https://accessibilite.numerique.gouv.fr/doc/RGAA-v4.1.2.pdf" target="_blank" class="btn-primary w-full">Consulter le PDF</a>
                     </div>
-                    <div class="card-gov">
-                        <p class="text-xs font-black uppercase text-blue-800 dark:text-blue-400 mb-3 tracking-widest">Guide</p>
-                        <h3 class="text-2xl md:text-4xl font-black mb-4 md:mb-6 uppercase text-[var(--text-main)]">Conformité RGAA</h3>
-                        <p class="text-lg md:text-xl font-bold text-[var(--text-main)] mb-8 md:mb-10 leading-relaxed">Guide de Conformité RGAA : Pour comprendre les étapes clés de la mise aux normes.</p>
-                        <a href="https://accessibilite-numerique-france.fr/Conformit%C3%A9-RGAA-2025-2026-Guide.pdf" target="_blank" class="btn-secondary w-full justify-center">Consulter le guide</a>
+                    <div class="card-gov rounded-xl border-slate-200">
+                        <p class="text-xs font-bold uppercase text-blue-600 mb-4 tracking-widest">Accompagnement</p>
+                        <h3 class="text-2xl md:text-4xl font-black mb-6 uppercase">Guide 2025-26</h3>
+                        <p class="text-lg font-medium text-slate-600 dark:text-slate-400 mb-10 leading-relaxed">Guide Stratégique de Conformité : Étapes clés pour piloter votre mise aux normes.</p>
+                        <a href="https://accessibilite-numerique-france.fr/Conformit%C3%A9-RGAA-2025-2026-Guide.pdf" target="_blank" class="btn-secondary w-full">Télécharger le guide</a>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Annuaire Section -->
-        <section class="section-padding bg-[var(--bg-main)]" id="prestataires">
+        <section class="section-padding bg-slate-50 dark:bg-slate-900/30" id="prestataires">
             <div class="max-w-7xl mx-auto px-4">
-                <h2 class="text-2xl md:text-5xl mb-8 md:mb-16">Annuaire des Experts</h2>
-                <div id="partners-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
+                <h2 class="text-2xl md:text-5xl mb-12 md:mb-20">Réseau d'Experts Partenaires</h2>
+                <div id="partners-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- JS Injected -->
                 </div>
             </div>
@@ -336,96 +324,92 @@
     <div id="legal-modal" class="fixed inset-0 z-[100] hidden">
         <div class="modal-overlay absolute inset-0 cursor-pointer" id="modal-close-overlay"></div>
         <div class="absolute inset-0 flex items-center justify-center p-4 pointer-events-none">
-            <div class="bg-[var(--bg-main)] w-full max-w-4xl max-h-[90vh] overflow-y-auto border-8 border-black dark:border-white p-6 md:p-12 pointer-events-auto relative shadow-2xl">
-                <button id="modal-close-btn" class="absolute top-4 right-4 text-black dark:text-white hover:text-red-600 transition-colors" aria-label="Fermer">
-                    <svg class="w-8 h-8 md:w-12 md:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"></path></svg>
+            <div class="bg-[var(--bg-main)] w-full max-w-4xl max-h-[90vh] overflow-y-auto border-4 border-slate-300 dark:border-slate-700 p-8 md:p-16 pointer-events-auto relative shadow-2xl rounded-2xl">
+                <button id="modal-close-btn" class="absolute top-6 right-6 text-slate-400 hover:text-red-500 transition-colors" aria-label="Fermer">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                 </button>
                 
-                <h2 class="text-3xl md:text-5xl font-black text-[var(--blue-france)] mb-8 border-b-8 border-red-600 inline-block pb-2">Mentions Légales</h2>
+                <h2 class="text-3xl md:text-5xl font-black text-blue-600 mb-10 border-b-4 border-slate-200 inline-block pb-2">Mentions Légales</h2>
                 
-                <div class="space-y-8 text-[var(--text-main)]">
+                <div class="space-y-10 text-[var(--text-main)]">
                     <section>
-                        <h3 class="text-xl md:text-2xl font-black uppercase mb-4 tracking-tighter">1. Éditeur du site</h3>
-                        <p class="font-bold">Le site accessibilite-numerique-france.fr est édité par Jordan Fouassier, Entrepreneur Individuel.</p>
-                        <ul class="mt-2 space-y-1 font-bold opacity-80">
+                        <h3 class="text-xl md:text-2xl font-bold uppercase mb-4 tracking-tighter">1. Éditeur du site</h3>
+                        <p class="text-lg">Le site accessibilite-numerique-france.fr est édité par Jordan Fouassier, Entrepreneur Individuel.</p>
+                        <ul class="mt-4 space-y-2 font-medium opacity-90">
                             <li>SIREN : 750 887 879</li>
                             <li>SIRET : 750 887 879 00021</li>
                             <li>Numéro de TVA intracommunautaire : FR57750887879</li>
                             <li>Siège social : 239 COURS EMILE ZOLA, 69100 VILLEURBANNE.</li>
-                            <li>Contact : <a href="mailto:info@accessibilite-numerique-france.fr" class="underline hover:text-blue-600">info@accessibilite-numerique-france.fr</a></li>
+                            <li>Contact : <a href="mailto:info@accessibilite-numerique-france.fr" class="text-blue-600 underline">info@accessibilite-numerique-france.fr</a></li>
                         </ul>
                     </section>
 
                     <section>
-                        <h3 class="text-xl md:text-2xl font-black uppercase mb-4 tracking-tighter">2. Directeur de la publication</h3>
-                        <p class="font-bold">Le directeur de la publication est Monsieur Jordan Fouassier.</p>
+                        <h3 class="text-xl md:text-2xl font-bold uppercase mb-4 tracking-tighter">2. Directeur de la publication</h3>
+                        <p class="text-lg">Le directeur de la publication est Monsieur Jordan Fouassier.</p>
                     </section>
 
                     <section>
-                        <h3 class="text-xl md:text-2xl font-black uppercase mb-4 tracking-tighter">3. Hébergement</h3>
-                        <p class="font-bold">Ce site est hébergé par Netlify, Inc., dont le siège social est situé au 44 Montgomery Street, Suite 300, San Francisco, CA 94104, USA.</p>
+                        <h3 class="text-xl md:text-2xl font-bold uppercase mb-4 tracking-tighter">3. Hébergement</h3>
+                        <p class="text-lg">Ce site est hébergé par Netlify, Inc., 44 Montgomery Street, Suite 300, San Francisco, CA 94104, USA.</p>
                     </section>
 
                     <section>
-                        <h3 class="text-xl md:text-2xl font-black uppercase mb-4 tracking-tighter">4. Nature du service et avertissement</h3>
-                        <div class="highlight-box">
-                            <p class="font-bold text-lg md:text-xl leading-tight italic">Le site accessibilite-numerique-france.fr est un site privé d'information et de conseil spécialisé en accessibilité numérique (RGAA). Il n'est en aucun cas un site officiel de l'État, d'une administration publique ou de l'AFNIC. Les services proposés sont des prestations de conseil privé pour accompagner les collectivités dans leur mise en conformité légale.</p>
+                        <h3 class="text-xl md:text-2xl font-bold uppercase mb-4 tracking-tighter">4. Nature du service</h3>
+                        <div class="highlight-box bg-slate-50 border-blue-500">
+                            <p class="text-lg leading-relaxed italic">Le site accessibilite-numerique-france.fr est un portail privé d'information et de conseil spécialisé. Il n'est pas affilié à un organisme gouvernemental ou public. Nos services sont des prestations de conseil indépendantes.</p>
                         </div>
                     </section>
 
                     <section>
-                        <h3 class="text-xl md:text-2xl font-black uppercase mb-4 tracking-tighter">5. Propriété intellectuelle</h3>
-                        <p class="font-bold">L’ensemble des contenus (textes, graphismes, logos) est la propriété exclusive de l’éditeur, sauf mention contraire. Toute reproduction sans autorisation est interdite.</p>
-                    </section>
-
-                    <section>
-                        <h3 class="text-xl md:text-2xl font-black uppercase mb-4 tracking-tighter">6. Données personnelles</h3>
-                        <p class="font-bold">Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression des données vous concernant via l'adresse : <a href="mailto:info@accessibilite-numerique-france.fr" class="underline hover:text-blue-600">info@accessibilite-numerique-france.fr</a>.</p>
+                        <h3 class="text-xl md:text-2xl font-bold uppercase mb-4 tracking-tighter">5. Propriété intellectuelle</h3>
+                        <p class="text-lg">Tous les contenus sont la propriété exclusive de l’éditeur. Toute reproduction non autorisée est passible de poursuites.</p>
                     </section>
                 </div>
 
-                <div class="mt-12 flex justify-center">
-                    <button id="modal-close-footer" class="btn-primary">Fermer la fenêtre</button>
+                <div class="mt-16 flex justify-center">
+                    <button id="modal-close-footer" class="btn-primary">Fermer</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Footer Responsive -->
-    <footer class="bg-slate-950 text-white pt-16 md:pt-24 pb-12 border-t-8 md:border-t-[12px] border-[#000091]">
+    <!-- Footer Corporate -->
+    <footer class="bg-slate-950 text-white pt-20 pb-12">
         <div class="max-w-7xl mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between gap-12 md:gap-24 text-center md:text-left">
+            <div class="flex flex-col md:flex-row justify-between gap-16 text-center md:text-left">
                 <div class="max-w-md mx-auto md:mx-0">
-                    <div class="mb-6 md:mb-10 bg-white inline-block p-2">
-                        <img src="https://accessibilite-numerique-france.fr/Logo-ANF.jpg" alt="Logo ANF" class="h-12 md:h-24 w-auto object-contain" onerror="this.src='https://placehold.co/200x80?text=LOGO+ANF'">
+                    <div class="mb-8 inline-block p-1 bg-white rounded-md">
+                        <img src="https://accessibilite-numerique-france.fr/Logo-ANF.jpg" alt="Logo ANF" class="h-12 w-auto object-contain" onerror="this.src='https://placehold.co/200x80?text=ACCESSIBILITE+NUMERIQUE+FRANCE'">
                     </div>
-                    <p class="text-xs font-black uppercase tracking-widest leading-loose opacity-70 mb-4">
-                        Portail privé d'information opéré par la société **Accessibilité Numérique France**. Indépendant des services de l'État.
+                    <p class="text-sm font-bold opacity-60 mb-6 leading-relaxed">
+                        Conseil indépendant en accessibilité numérique (RGAA). <br>
+                        © 2026 Accessibilité Numérique France.
                     </p>
-                    <p class="text-[10px] font-bold text-slate-400 italic leading-relaxed">
+                    <p class="text-[11px] font-bold text-slate-500 italic uppercase tracking-wider">
                         Accessibilité Numérique France est une initiative privée de conseil et n'est pas affiliée à un organisme gouvernemental.
                     </p>
                 </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-16">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-12">
                     <div>
-                        <h4 class="font-black text-lg md:text-2xl mb-4 md:mb-8 uppercase tracking-tighter text-blue-400">Accès Direct</h4>
-                        <ul class="space-y-4 md:space-y-6 font-black uppercase text-xs md:text-sm tracking-widest">
-                            <li><a href="https://accessibilite.numerique.gouv.fr/doc/RGAA-v4.1.2.pdf" target="_blank" class="hover:underline">Guide RGAA 4.1.2</a></li>
-                            <li><a href="mailto:info@accessibilite-numerique-france.fr" class="hover:underline">Nous contacter</a></li>
+                        <h4 class="font-black text-xl mb-8 text-blue-500 tracking-tight">Expertise</h4>
+                        <ul class="space-y-4 font-bold text-sm tracking-wide opacity-80">
+                            <li><a href="https://accessibilite.numerique.gouv.fr/doc/RGAA-v4.1.2.pdf" target="_blank" class="hover:text-blue-400">Documentation RGAA</a></li>
+                            <li><a href="mailto:info@accessibilite-numerique-france.fr" class="hover:text-blue-400">Contact Expert</a></li>
                         </ul>
                     </div>
                     <div>
-                        <h4 class="font-black text-lg md:text-2xl mb-4 md:mb-8 uppercase tracking-tighter text-blue-400">Mentions</h4>
-                        <ul class="space-y-4 md:space-y-6 font-black uppercase text-xs md:text-sm tracking-widest">
-                            <li><button id="trigger-legal" class="hover:underline text-left uppercase">Mentions Légales</button></li>
+                        <h4 class="font-black text-xl mb-8 text-blue-500 tracking-tight">Légal</h4>
+                        <ul class="space-y-4 font-bold text-sm tracking-wide opacity-80">
+                            <li><button id="trigger-legal" class="hover:text-blue-400 uppercase">Mentions Légales</button></li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <div class="mt-16 md:mt-24 pt-8 md:pt-12 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4 md:gap-8">
-                <p class="text-[10px] font-black uppercase tracking-widest opacity-50 italic">Licence Ouverte Etalab 2.0</p>
-                <div class="px-4 md:px-6 py-2 border-2 md:border-4 border-white font-black text-[10px] md:text-sm uppercase tracking-widest">
-                    Conformité Accessibilité : 100%
+            <div class="mt-20 pt-8 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-6">
+                <p class="text-[10px] font-bold uppercase tracking-[3px] opacity-40">Innovation & Inclusion Digitale</p>
+                <div class="px-5 py-2 border-2 border-slate-700 rounded-full font-bold text-[10px] uppercase tracking-widest text-slate-400">
+                    Accompagnement Certifié
                 </div>
             </div>
         </div>
@@ -476,13 +460,7 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-
-        // Modal Legal Notice Logic
+        // Modal Logic
         const modal = document.getElementById('legal-modal');
         const triggerBtn = document.getElementById('trigger-legal');
         const closeBtn = document.getElementById('modal-close-btn');
@@ -504,7 +482,6 @@
         closeOverlay.addEventListener('click', () => toggleModal(false));
         closeFooter.addEventListener('click', () => toggleModal(false));
 
-        // Close on ESC key
         window.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
                 toggleModal(false);
@@ -601,13 +578,13 @@
         const grid = document.getElementById('partners-grid');
         partners.forEach(p => {
             const card = document.createElement('div');
-            card.className = "card-gov flex flex-col";
+            card.className = "card-gov flex flex-col rounded-xl border-slate-200";
             card.innerHTML = `
-                <span class="text-[10px] md:text-xs font-black uppercase text-blue-800 dark:text-blue-400 mb-2 md:mb-4 tracking-widest">${p.tag}</span>
-                <h3 class="text-xl md:text-2xl font-black mb-4 md:mb-6 uppercase tracking-tight text-[var(--text-main)]">${p.name}</h3>
-                <p class="text-sm md:text-base font-bold text-slate-700 dark:text-slate-300 mb-4 leading-relaxed">${p.desc}</p>
-                <p class="text-[10px] md:text-xs font-black text-blue-600 dark:text-blue-300 italic mb-8 flex-grow">${p.contact}</p>
-                <a href="${p.website}" target="_blank" class="text-[10px] md:text-sm font-black uppercase border-b-4 border-[var(--border-strong)] self-start hover:text-blue-800 hover:border-blue-800 transition-colors pb-1 text-[var(--text-main)]">DECOUVRIR</a>
+                <span class="text-[10px] md:text-xs font-bold uppercase text-blue-600 mb-2 md:mb-4 tracking-widest">${p.tag}</span>
+                <h3 class="text-xl md:text-2xl font-black mb-4 uppercase tracking-tight text-[var(--text-main)]">${p.name}</h3>
+                <p class="text-sm md:text-base font-medium text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">${p.desc}</p>
+                <p class="text-[10px] md:text-xs font-bold text-blue-500 italic mb-8 flex-grow">${p.contact}</p>
+                <a href="${p.website}" target="_blank" class="text-[10px] md:text-sm font-bold uppercase border-b-2 border-slate-300 self-start hover:text-blue-600 hover:border-blue-600 transition-colors pb-1 text-[var(--text-main)]">En savoir plus</a>
             `;
             grid.appendChild(card);
         });
