@@ -151,6 +151,12 @@
         .theme-toggle-btn:hover {
             background-color: var(--bg-alt);
         }
+
+        /* Modal Styles */
+        .modal-overlay {
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(4px);
+        }
     </style>
 </head>
 <body class="transition-colors duration-300">
@@ -326,6 +332,65 @@
         </section>
     </main>
 
+    <!-- Modal Mentions Légales -->
+    <div id="legal-modal" class="fixed inset-0 z-[100] hidden">
+        <div class="modal-overlay absolute inset-0 cursor-pointer" id="modal-close-overlay"></div>
+        <div class="absolute inset-0 flex items-center justify-center p-4 pointer-events-none">
+            <div class="bg-[var(--bg-main)] w-full max-w-4xl max-h-[90vh] overflow-y-auto border-8 border-black dark:border-white p-6 md:p-12 pointer-events-auto relative shadow-2xl">
+                <button id="modal-close-btn" class="absolute top-4 right-4 text-black dark:text-white hover:text-red-600 transition-colors" aria-label="Fermer">
+                    <svg class="w-8 h-8 md:w-12 md:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+                
+                <h2 class="text-3xl md:text-5xl font-black text-[var(--blue-france)] mb-8 border-b-8 border-red-600 inline-block pb-2">Mentions Légales</h2>
+                
+                <div class="space-y-8 text-[var(--text-main)]">
+                    <section>
+                        <h3 class="text-xl md:text-2xl font-black uppercase mb-4 tracking-tighter">1. Éditeur du site</h3>
+                        <p class="font-bold">Le site accessibilite-numerique-france.fr est édité par Jordan Fouassier, Entrepreneur Individuel.</p>
+                        <ul class="mt-2 space-y-1 font-bold opacity-80">
+                            <li>SIREN : 750 887 879</li>
+                            <li>SIRET : 750 887 879 00021</li>
+                            <li>Numéro de TVA intracommunautaire : FR57750887879</li>
+                            <li>Siège social : 239 COURS EMILE ZOLA, 69100 VILLEURBANNE.</li>
+                            <li>Contact : <a href="mailto:info@accessibilite-numerique-france.fr" class="underline hover:text-blue-600">info@accessibilite-numerique-france.fr</a></li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3 class="text-xl md:text-2xl font-black uppercase mb-4 tracking-tighter">2. Directeur de la publication</h3>
+                        <p class="font-bold">Le directeur de la publication est Monsieur Jordan Fouassier.</p>
+                    </section>
+
+                    <section>
+                        <h3 class="text-xl md:text-2xl font-black uppercase mb-4 tracking-tighter">3. Hébergement</h3>
+                        <p class="font-bold">Ce site est hébergé par Netlify, Inc., dont le siège social est situé au 44 Montgomery Street, Suite 300, San Francisco, CA 94104, USA.</p>
+                    </section>
+
+                    <section>
+                        <h3 class="text-xl md:text-2xl font-black uppercase mb-4 tracking-tighter">4. Nature du service et avertissement</h3>
+                        <div class="highlight-box">
+                            <p class="font-bold text-lg md:text-xl leading-tight italic">Le site accessibilite-numerique-france.fr est un site privé d'information et de conseil spécialisé en accessibilité numérique (RGAA). Il n'est en aucun cas un site officiel de l'État, d'une administration publique ou de l'AFNIC. Les services proposés sont des prestations de conseil privé pour accompagner les collectivités dans leur mise en conformité légale.</p>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3 class="text-xl md:text-2xl font-black uppercase mb-4 tracking-tighter">5. Propriété intellectuelle</h3>
+                        <p class="font-bold">L’ensemble des contenus (textes, graphismes, logos) est la propriété exclusive de l’éditeur, sauf mention contraire. Toute reproduction sans autorisation est interdite.</p>
+                    </section>
+
+                    <section>
+                        <h3 class="text-xl md:text-2xl font-black uppercase mb-4 tracking-tighter">6. Données personnelles</h3>
+                        <p class="font-bold">Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression des données vous concernant via l'adresse : <a href="mailto:info@accessibilite-numerique-france.fr" class="underline hover:text-blue-600">info@accessibilite-numerique-france.fr</a>.</p>
+                    </section>
+                </div>
+
+                <div class="mt-12 flex justify-center">
+                    <button id="modal-close-footer" class="btn-primary">Fermer la fenêtre</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer Responsive -->
     <footer class="bg-slate-950 text-white pt-16 md:pt-24 pb-12 border-t-8 md:border-t-[12px] border-[#000091]">
         <div class="max-w-7xl mx-auto px-4">
@@ -334,24 +399,25 @@
                     <div class="mb-6 md:mb-10 bg-white inline-block p-2">
                         <img src="https://accessibilite-numerique-france.fr/Logo-ANF.jpg" alt="Logo ANF" class="h-12 md:h-24 w-auto object-contain" onerror="this.src='https://placehold.co/200x80?text=LOGO+ANF'">
                     </div>
-                    <p class="text-xs font-black uppercase tracking-widest leading-loose opacity-70">
+                    <p class="text-xs font-black uppercase tracking-widest leading-loose opacity-70 mb-4">
                         Portail privé d'information opéré par la société **Accessibilité Numérique France**. Indépendant des services de l'État.
+                    </p>
+                    <p class="text-[10px] font-bold text-slate-400 italic leading-relaxed">
+                        Accessibilité Numérique France est une initiative privée de conseil et n'est pas affiliée à un organisme gouvernemental.
                     </p>
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-16">
                     <div>
                         <h4 class="font-black text-lg md:text-2xl mb-4 md:mb-8 uppercase tracking-tighter text-blue-400">Accès Direct</h4>
                         <ul class="space-y-4 md:space-y-6 font-black uppercase text-xs md:text-sm tracking-widest">
-                            <li><a href="#" class="hover:underline">Guide RGAA 4.1.2</a></li>
-                            <li><a href="#" class="hover:underline">Textes de Loi</a></li>
-                            <li><a href="#" class="hover:underline">Nous contacter</a></li>
+                            <li><a href="https://accessibilite.numerique.gouv.fr/doc/RGAA-v4.1.2.pdf" target="_blank" class="hover:underline">Guide RGAA 4.1.2</a></li>
+                            <li><a href="mailto:info@accessibilite-numerique-france.fr" class="hover:underline">Nous contacter</a></li>
                         </ul>
                     </div>
                     <div>
                         <h4 class="font-black text-lg md:text-2xl mb-4 md:mb-8 uppercase tracking-tighter text-blue-400">Mentions</h4>
                         <ul class="space-y-4 md:space-y-6 font-black uppercase text-xs md:text-sm tracking-widest">
-                            <li><a href="#" class="hover:underline">Conditions d'utilisation</a></li>
-                            <li><a href="#" class="hover:underline">Politique de données</a></li>
+                            <li><button id="trigger-legal" class="hover:underline text-left uppercase">Mentions Légales</button></li>
                         </ul>
                     </div>
                 </div>
@@ -371,7 +437,6 @@
         const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
         const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
 
-        // Check local storage or system preference
         if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
             themeToggleLightIcon.classList.remove('hidden');
@@ -415,6 +480,35 @@
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
             });
+        });
+
+        // Modal Legal Notice Logic
+        const modal = document.getElementById('legal-modal');
+        const triggerBtn = document.getElementById('trigger-legal');
+        const closeBtn = document.getElementById('modal-close-btn');
+        const closeOverlay = document.getElementById('modal-close-overlay');
+        const closeFooter = document.getElementById('modal-close-footer');
+
+        const toggleModal = (show) => {
+            if (show) {
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            } else {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        };
+
+        triggerBtn.addEventListener('click', () => toggleModal(true));
+        closeBtn.addEventListener('click', () => toggleModal(false));
+        closeOverlay.addEventListener('click', () => toggleModal(false));
+        closeFooter.addEventListener('click', () => toggleModal(false));
+
+        // Close on ESC key
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                toggleModal(false);
+            }
         });
 
         const partners = [
